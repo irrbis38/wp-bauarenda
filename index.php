@@ -222,7 +222,7 @@ get_header();
         <?php
         $query = new WP_Query([
           'post_type' => 'technics',
-          'posts_per_page' => 12,
+          'posts_per_page' => 1,
           // 'meta_key' => 'popularity',
           // 'orderby' => 'meta_value_num',
           // 'order' => 'DESC',
