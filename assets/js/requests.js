@@ -1,14 +1,77 @@
 window.addEventListener("DOMContentLoaded", () => {
-  const index_page = document.querySelector(".index__page");
+  const catalog = document.querySelector(".catalog");
   const load_more_btn = document.querySelector(".catalog__more");
+  const category_selects = document.querySelectorAll(".catalog__category");
+  const catalog_sort_items = document.querySelectorAll(".catalog__sort-item");
+  const sort_type_item = document.querySelector(".catalog__sort-type");
 
-  if (index_page) {
+  // options for query to get posts
+  const query_options = {
+    selected_category: "all",
+    sort_type: "catalog__popularity",
+    sort_order: "DESC",
+  };
+
+  if (catalog) {
     loadMoreHandler(load_more_btn);
+    selectCategoryHandler(category_selects, query_options);
+    sortCatalogHandler(catalog_sort_items, query_options, sort_type_item);
   }
 
+  function sortCatalogHandler(sort_items, query_options, sort_type_item) {
+    sort_items.forEach((item) =>
+      item.addEventListener("click", (e) => {
+        // TODO: remove request if e.target is already selected
+        const sort_type = e.target.dataset.type;
+
+        // set sort order
+        if (sort_type === "popularity") {
+          query_options.sort_type = "catalog__popularity";
+        } else {
+          query_options.sort_type = "catalog__price";
+        }
+
+        // set sort order
+        if (sort_type === "fromMinToMax") {
+          query_options.sort_order = "ASC";
+        } else {
+          query_options.sort_order = "DESC";
+        }
+        get_post_data("ajax_sort", query_options);
+      })
+    );
+  }
+
+  // add handlres to 'catalog__category' items
+  function selectCategoryHandler(category_selects, query_options) {
+    category_selects.forEach((btn) =>
+      btn.addEventListener("click", (e) => {
+        query_options.selected_category = e.target.dataset.type;
+        get_post_data("ajax_sort", query_options);
+      })
+    );
+  }
+
+  // add handler to "load more" button
   function loadMoreHandler(btn) {
-    btn.addEventListener("click", () => {
-      console.log("more");
+    btn.addEventListener("click", () =>
+      get_post_data("ajax_sort", query_options)
+    );
+  }
+
+  // get posts from WP
+  function get_post_data(action, query_options = {}) {
+    const url = document.querySelector(".ajaxurl").textContent;
+    $.ajax({
+      url: url,
+      type: "POST",
+      data: {
+        action: action, // functions.php
+        query_options,
+      },
+      success: function (results) {
+        console.log(results);
+      },
     });
   }
 });
