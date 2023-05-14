@@ -793,7 +793,7 @@ get_header();
 							<div class="news__comments"><img class="news__icon" src="<?php echo bloginfo( 'template_url' ); ?>/assets/images/news/comment.svg"
 									alt="количество просмотров"><span>0</span></div>
 						</div>
-					</div>ß
+					</div>
 				</div>
 				<div class="news__item news4 element-animation">
 					<h4 class="news__header">Весомые причины для аренды специализированной техники</h4>
