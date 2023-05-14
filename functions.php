@@ -58,6 +58,7 @@ function ajax_sort() {
 	$selected_cat = $_POST['query_options']['selected_category'];
 	$sort_type = $_POST['query_options']['sort_type'];
 	$sort_order = $_POST['query_options']['sort_order'];
+	$post_offset = $_POST['query_options']['post_offset'];
 
 	header( 'Content-type: application/json' );
 
@@ -67,7 +68,8 @@ function ajax_sort() {
 		'meta_key' => $sort_type,
 		'orderby' => 'meta_value_num',
 		'order' => $sort_order,
-		'cat_tech' => $selected_cat
+		'cat_tech' => $selected_cat,
+		'offset' => $post_offset
 	] );
 	// get posts amount
 	$len = $query->found_posts;
