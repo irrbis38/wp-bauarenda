@@ -64,12 +64,13 @@ function ajax_sort()
   $sort_type = $_POST['query_options']['sort_type'];
   $sort_order = $_POST['query_options']['sort_order'];
   $post_offset = $_POST['query_options']['post_offset'];
+  $posts_per_page = $_POST['query_options']['posts_per_page'];
 
   header('Content-type: application/json');
 
   $query = new WP_Query([
     'post_type' => 'technics',
-    'posts_per_page' => 2,
+    'posts_per_page' => $posts_per_page,
     'meta_key' => $sort_type,
     'orderby' => 'meta_value_num',
     'order' => $sort_order,
