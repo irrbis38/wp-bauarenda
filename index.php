@@ -241,71 +241,71 @@ get_header();
           while ($query->have_posts()):
             $query->the_post();
             ?>
-                <div class="catalog__item">
-                  <a href="#" class="catalog__link"></a>
+            <div class="catalog__item">
+              <a href="#" class="catalog__link"></a>
 
-                  <div class="catalog__img">
-                    <img src="<?php echo get_field('catalog__img'); ?>" alt="<?php the_title(); ?>" />
-                  </div>
+              <div class="catalog__img">
+                <img src="<?php echo get_field('catalog__img'); ?>" alt="<?php the_title(); ?>" />
+              </div>
 
-                  <a href="#" class="catalog__button">Подробнее</a>
+              <a href="#" class="catalog__button">Подробнее</a>
 
-                  <div class="catalog__info">
-                    <h4 class="catalog__header">
-                      <?php the_title(); ?>
-                    </h4>
+              <div class="catalog__info">
+                <h4 class="catalog__header">
+                  <?php the_title(); ?>
+                </h4>
 
-                    <div class="catalog__options">
-                      <div class="catalog__feature">
-                        <p class="catalog__name">
-                          <?php echo get_field('catalog__name1'); ?>
-                        </p>
-                        <p class="catalog__value">
-                          <?php echo get_field('catalog__value1'); ?>
-                        </p>
-                      </div>
-
-                      <div class="catalog__feature">
-                        <p class="catalog__name">
-                          <?php echo get_field('catalog__name2'); ?>
-                        </p>
-                        <p class="catalog__value">
-                          <?php echo get_field('catalog__value2'); ?>
-                        </p>
-                      </div>
-
-                      <div class="catalog__feature">
-                        <p class="catalog__name">
-                          <?php echo get_field('catalog__name3'); ?>
-                        </p>
-                        <p class="catalog__value">
-                          <?php echo get_field('catalog__value3'); ?>
-                        </p>
-                      </div>
-                    </div>
-
-                    <p class="catalog__price">
-                      <?php echo get_field('catalog__price'); ?> BYN
+                <div class="catalog__options">
+                  <div class="catalog__feature">
+                    <p class="catalog__name">
+                      <?php echo get_field('catalog__name1'); ?>
+                    </p>
+                    <p class="catalog__value">
+                      <?php echo get_field('catalog__value1'); ?>
                     </p>
                   </div>
 
+                  <div class="catalog__feature">
+                    <p class="catalog__name">
+                      <?php echo get_field('catalog__name2'); ?>
+                    </p>
+                    <p class="catalog__value">
+                      <?php echo get_field('catalog__value2'); ?>
+                    </p>
+                  </div>
+
+                  <div class="catalog__feature">
+                    <p class="catalog__name">
+                      <?php echo get_field('catalog__name3'); ?>
+                    </p>
+                    <p class="catalog__value">
+                      <?php echo get_field('catalog__value3'); ?>
+                    </p>
+                  </div>
                 </div>
-                <?php
+
+                <p class="catalog__price">
+                  <?php echo get_field('catalog__price'); ?> BYN
+                </p>
+              </div>
+
+            </div>
+            <?php
           endwhile;
           wp_reset_postdata();
           ?>
 
-            <div class="page-info-ajax" style="display:none;">
-              <p class="max_pages">
-                <?php echo $query->max_num_pages; ?>
-              </p>
-            </div>
+          <div class="page-info-ajax" style="display:none;">
+            <p class="max_pages">
+              <?php echo $query->max_num_pages; ?>
+            </p>
+          </div>
 
-            <?php
+          <?php
         endif;
         ?>
 
-        
+
       </div>
       <!-- <div class="catalog__wrapper">
         <div class="catalog__item">
@@ -662,6 +662,13 @@ get_header();
           </div>
         </div>
       </div> -->
+      <div class="catalog__nofound">
+        <p class="catalog__sorry">Нам жаль, но по вашему запросу ничего не нашлось</p>
+        <div class="catalog__recommendation">
+          <p>Скорректируйте ваш запрос или</p>
+          <p><a href="#">передите в каталог</a></p>
+        </div>
+      </div>
       <button class="catalog__more btn__link btn__grey">Показать больше</button>
     </div>
   </section>
