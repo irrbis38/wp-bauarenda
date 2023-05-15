@@ -195,8 +195,7 @@ function initCatalog() {
       catalog_nofound.classList.remove("active");
 
       // show catalog__more button
-      // load_more_btn.classList.remove("hidden");
-      load_more_btn.style.display = "block";
+      load_more_btn.classList.remove("hidden");
 
       // cleanup catalog_wrapper if it's need
       if (isCleanupNeeded) {
@@ -209,8 +208,7 @@ function initCatalog() {
       pages_amount = Math.ceil(posts_amount / query_options.posts_per_page);
 
       if (page_number >= pages_amount) {
-        // load_more_btn.classList.add("hidden");
-        load_more_btn.style.display = "none";
+        load_more_btn.classList.add("hidden");
       }
 
       // extract posts data
@@ -235,8 +233,7 @@ function initCatalog() {
       catalog_nofound.classList.add("active");
 
       // show catalog__more button
-      // load_more_btn.classList.add("hidden");
-      load_more_btn.style.display = "none";
+      load_more_btn.classList.add("hidden");
     }
   }
 
