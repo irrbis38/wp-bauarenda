@@ -26,6 +26,7 @@ function initCatalog() {
     sort_order: "DESC",
     post_offset: 0,
     posts_per_page: 2,
+    search_string: "",
   };
 
   let page_number = 1;
@@ -134,6 +135,37 @@ function initCatalog() {
     // get posts
     getPostData("ajax_sort", false);
   });
+
+  //=================== CATALOG SEARCH
+
+  // function - decorator
+  function debounce(callee, timeoutMs) {
+    return function perform(...args) {
+      let previousCall = this.lastCall;
+      this.lastCall = Date.now();
+
+      if (previousCall && this.lastCall - previousCall <= timeoutMs) {
+        clearTimeout(this.lastCallTimer);
+      }
+
+      this.lastCallTimer = setTimeout(() => callee(...args), timeoutMs);
+    };
+  }
+
+  // function that handles data input
+  function handleSearchInput(e) {
+    query_options.search_string = e.target.value;
+
+    // get posts
+    getPostData("ajax_sort", true);
+  }
+
+  // if time between keypress less than 250ms handleSearchInput doesn't execute
+  const debouncedHandle = debounce(handleSearchInput, 250);
+
+  // add listener to catalog search input
+  const catalog_input = document.querySelector(".catalog__input");
+  catalog_input.addEventListener("input", debouncedHandle);
 
   //=================== CATALOG RENDER FUNCTIONS
   // create catalog item
@@ -248,7 +280,7 @@ function initCatalog() {
         query_options,
       },
       success: function (results) {
-        console.log(results);
+        // console.log(results);
         renderCatalogItems(isCleanupNeeded, results);
       },
     });
