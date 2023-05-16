@@ -415,7 +415,7 @@ get_header();
       <h2 class="news__title block__title">Новости</h2>
       <div class="news__wrapper">
         <div class="news__item news1 element-animation">
-          <h4 class="news__header">«Белорусская строительная неделя» снова в Минске</h4>
+          <h4 class="news__header"><a href="#">«Белорусская строительная неделя» снова в Минске</a></h4>
           <div class="news__info">
             <p class="news__published">сегодня 10:00</p>
             <div class="news__statistics">
@@ -427,7 +427,7 @@ get_header();
           </div>
         </div>
         <div class="news__item news2 element-animation">
-          <h4 class="news__header">Как правильно установить автокран на рабочей строительной площадке</h4>
+          <h4 class="news__header"><a href="#">Как правильно установить автокран на рабочей строительной площадке</a></h4>
           <div class="news__info">
             <p class="news__published">сегодня 10:00</p>
             <div class="news__statistics">
@@ -439,7 +439,7 @@ get_header();
           </div>
         </div>
         <div class="news__item news3 element-animation">
-          <h4 class="news__header">Область применения телескопических погрузчиков</h4>
+          <h4 class="news__header"><a href="#">Область применения телескопических погрузчиков</a></h4>
           <div class="news__info">
             <p class="news__published">сегодня 10:00</p>
             <div class="news__statistics">
@@ -451,7 +451,7 @@ get_header();
           </div>
         </div>
         <div class="news__item news4 element-animation">
-          <h4 class="news__header">Весомые причины для аренды специализированной техники</h4>
+          <h4 class="news__header"><a href="#">Весомые причины для аренды специализированной техники</a></h4>
           <div class="news__info">
             <p class="news__published">сегодня 10:00</p>
             <div class="news__statistics">
@@ -463,7 +463,7 @@ get_header();
           </div>
         </div>
         <div class="news__item news5 element-animation">
-          <h4 class="news__header">Особенности организации вывоза строительного мусора и грунта</h4>
+          <h4 class="news__header"><a href="#">Особенности организации вывоза строительного мусора и грунта</a></h4>
           <div class="news__info">
             <p class="news__published">сегодня 10:00</p>
             <div class="news__statistics">
