@@ -3,6 +3,7 @@
 add_action('wp_enqueue_scripts', 'bauarenda_scripts');
 add_action('init', 'ba_regiser_type_technics');
 add_action('init', 'ba_regiser_type_reviews');
+add_action('init', 'ba_regiser_type_news');
 
 // add styles and scripts
 function bauarenda_scripts()
@@ -113,9 +114,9 @@ function ajax_sort()
   wp_reset_postdata();
 }
 
-// ====== NEWS ======
+// ====== REVIEWS ======
 
-// add custom post type NEWS
+// add custom post type REVIEWS
 function ba_regiser_type_reviews()
 {
   register_post_type('reviews', [
@@ -132,6 +133,41 @@ function ba_regiser_type_reviews()
       'not_found_in_trash' => 'В корзине отзывов не найдено',
       'parent_item_colon' => '',
       'menu_name' => 'Отзывы'
+    ],
+    'public' => true,
+    'has_archive' => true,
+    'menu_icon' => 'dashicons-screenoptions',
+    'supports' => ['title']
+  ]);
+
+  // register_taxonomy('reviews', ['reviews'], [
+  //   'labels' => [
+  //     'name' => 'Отзывы'
+  //   ],
+  //   'public' => true,
+  //   'hierarchical' => true,
+  // ]);
+}
+
+// ====== NEWS ======
+
+// add custom post type NEWS
+function ba_regiser_type_news()
+{
+  register_post_type('news', [
+    'labels' => [
+      'name' => 'Новости',
+      'singular_name' => 'Новость',
+      'add_new' => 'Добавить новость',
+      'add_new_item' => 'Добавить новость',
+      'edit_item' => 'Редактировать новость',
+      'new_item' => 'Ещё новость',
+      'view_item' => 'Посмотреть новость',
+      'search_items' => 'Найти новость',
+      'not_found' => 'Новостей не найдено',
+      'not_found_in_trash' => 'В корзине новостей не найдено',
+      'parent_item_colon' => '',
+      'menu_name' => 'Новости'
     ],
     'public' => true,
     'has_archive' => true,

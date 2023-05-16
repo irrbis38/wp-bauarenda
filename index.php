@@ -228,7 +228,7 @@ get_header();
 
       <div class="catalog__wrapper">
         <?php
-        $query = new WP_Query([
+        $query_posts = new WP_Query([
           'post_type' => 'technics',
           'posts_per_page' => 2,
           'meta_key' => 'catalog__popularity',
@@ -237,9 +237,9 @@ get_header();
           'cat_tech' => 'all'
         ]);
 
-        if ($query->have_posts()):
-          while ($query->have_posts()):
-            $query->the_post();
+        if ($query_posts->have_posts()):
+          while ($query_posts->have_posts()):
+            $query_posts->the_post();
             ?>
             <div class="catalog__item">
               <a href="#" class="catalog__link"></a>
@@ -411,10 +411,65 @@ get_header();
     </div>
   </section>
   <section class="news">
+    <!-- <?php
+    // get current date to next compare
+    $today = getdate();
+    $day = ($today['mday'] < 10) ? "0" . $today['mday'] : $today['mday'];
+    $month = ($today['mon'] < 10) ? "0" . $today['mon'] : $today['mon'];
+    $year = $today["year"];
+    $current_date = "$day.$month.$year";
+    ?> -->
     <div class="container">
       <h2 class="news__title block__title">Новости</h2>
       <div class="news__wrapper">
-        <div class="news__item news1 element-animation">
+
+        <?php
+        $query_news = new WP_Query([
+          'post_type' => 'news',
+          'posts_per_page' => 5,
+          'orderby' => 'date',
+          'order' => 'DESC'
+        ]);
+
+        if ($query_news->have_posts()):
+          while ($query_news->have_posts()):
+            $query_news->the_post();
+            ?>
+
+
+            <div class="news__item">
+              <h4 class="news__header"><a href="#">
+                  <?php the_title(); ?>
+                </a></h4>
+              <div class="news__info">
+                <p class="news__published">
+                  <?php
+                  $publish_date = get_the_date('d.m.Y');
+                  $publish_date === $current_date ? print 'сегодня' : the_time('d.m.Y');
+                  ?>
+                  <?php
+                  the_time('H:i');
+                  ?>
+                </p>
+                <div class="news__statistics">
+                  <div class="news__views"><img class="news__icon" src="<?php echo bloginfo('template_url'); ?>/assets/images/news/view.svg"
+                      alt="количество просмотров"><span>236</span></div>
+                  <div class="news__comments"><img class="news__icon" src="<?php echo bloginfo('template_url'); ?>/assets/images/news/comment.svg"
+                      alt="количество просмотров"><span>0</span></div>
+                </div>
+              </div>
+            </div>
+
+
+
+            <?php
+          endwhile;
+          wp_reset_postdata();
+
+        endif;
+        ?>
+
+        <!-- <div class="news__item element-animation">
           <h4 class="news__header"><a href="#">«Белорусская строительная неделя» снова в Минске</a></h4>
           <div class="news__info">
             <p class="news__published">сегодня 10:00</p>
@@ -426,7 +481,8 @@ get_header();
             </div>
           </div>
         </div>
-        <div class="news__item news2 element-animation">
+
+        <div class="news__item element-animation">
           <h4 class="news__header"><a href="#">Как правильно установить автокран на рабочей строительной площадке</a></h4>
           <div class="news__info">
             <p class="news__published">сегодня 10:00</p>
@@ -438,7 +494,8 @@ get_header();
             </div>
           </div>
         </div>
-        <div class="news__item news3 element-animation">
+
+        <div class="news__item element-animation">
           <h4 class="news__header"><a href="#">Область применения телескопических погрузчиков</a></h4>
           <div class="news__info">
             <p class="news__published">сегодня 10:00</p>
@@ -450,7 +507,8 @@ get_header();
             </div>
           </div>
         </div>
-        <div class="news__item news4 element-animation">
+
+        <div class="news__item element-animation">
           <h4 class="news__header"><a href="#">Весомые причины для аренды специализированной техники</a></h4>
           <div class="news__info">
             <p class="news__published">сегодня 10:00</p>
@@ -462,7 +520,8 @@ get_header();
             </div>
           </div>
         </div>
-        <div class="news__item news5 element-animation">
+
+        <div class="news__item element-animation">
           <h4 class="news__header"><a href="#">Особенности организации вывоза строительного мусора и грунта</a></h4>
           <div class="news__info">
             <p class="news__published">сегодня 10:00</p>
@@ -473,8 +532,11 @@ get_header();
                   alt="количество просмотров"><span>0</span></div>
             </div>
           </div>
-        </div>
-      </div><a class="news__more btn__link btn__grey" href="#">Посмотреть все</a>
+        </div> -->
+
+
+      </div>
+      <a class="news__more btn__link btn__grey" href="#">Посмотреть все</a>
     </div>
   </section>
   <section class="brands">
@@ -660,14 +722,14 @@ get_header();
           <div class="reviews__wrapper swiper-wrapper">
 
             <?php
-            $query = new WP_Query([
+            $query_reviews = new WP_Query([
               'post_type' => 'reviews',
               'posts_per_page' => -1,
             ]);
 
-            if ($query->have_posts()):
-              while ($query->have_posts()):
-                $query->the_post();
+            if ($query_reviews->have_posts()):
+              while ($query_reviews->have_posts()):
+                $query_reviews->the_post();
                 ?>
 
                 <div class="reviews__item swiper-slide">
