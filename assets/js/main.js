@@ -1,13 +1,59 @@
 document.addEventListener("DOMContentLoaded", function () {
   initHeader();
   initHeaderSearch();
-  initToTopButton();
   initToggleFeedbackField();
   initAnimationShowByScroll();
 
-  const index__page = document.querySelector(".index__page");
-  if (index__page) {
-    initIndexPage();
+  // init index page
+  const index_page = document.querySelector(".index__page");
+  if (index_page) {
+    const intro = document.querySelector(".intro");
+
+    initIndexPageIntroSlider();
+    initToTopButton(intro);
+    initReviewsSlider();
+    initReviewsFullScreen();
+    initForms();
+  }
+
+  // init our_partners page
+  const our_partners_page = document.querySelector(".our-partners__page");
+  if (our_partners_page) {
+    const first = document.querySelector(".first");
+    initToTopButton(first);
+    initReviewsSlider();
+    initReviewsFullScreen();
+    initForms();
+  }
+
+  // init qa page
+  const qa_page = document.querySelector(".qa__page");
+  if (qa_page) {
+    const first = document.querySelector(".first");
+    initToTopButton(first);
+    initReviewsSlider();
+    initReviewsFullScreen();
+    initForms();
+    initQAaccordion();
+  }
+
+  // init our_clients page
+  const our_clients_page = document.querySelector(".our-clients__page");
+  if (our_clients_page) {
+    const first = document.querySelector(".first");
+    initToTopButton(first);
+    initReviewsSlider();
+    initReviewsFullScreen();
+    initForms();
+  }
+
+  // init reviews page
+  const reviews_page = document.querySelector(".reviews__page");
+  if (reviews_page) {
+    const first = document.querySelector(".first");
+    initToTopButton(first);
+    initReviewsFullScreen();
+    initForms();
   }
 });
 
@@ -58,7 +104,7 @@ function initHeader() {
   // DROPDOWN BY CLICK
 
   function toggleDropdownList(event) {
-    event.preventDefault();
+    // event.preventDefault();
 
     const currentLink = event.target;
     const currentItem = currentLink.closest(".dropdown_show");
@@ -198,15 +244,13 @@ function initHeaderSearch() {
 }
 
 // INIT TO TOP BUTTOP
-function initToTopButton() {
+function initToTopButton(first_block) {
   // to top button
-
   const fixedBlock = document.querySelector(".fixed");
   const toTopButton = document.querySelector(".fixed__toTop");
   const header = document.querySelector(".header");
-  const intro = document.querySelector(".intro");
 
-  let startHeight = header.offsetHeight + intro.offsetHeight;
+  let startHeight = header.offsetHeight + first_block.offsetHeight;
 
   window.addEventListener("scroll", function () {
     if (this.scrollY > startHeight) {
@@ -275,10 +319,8 @@ function initAnimationShowByScroll() {
   }
 }
 
-// INIT INDEX PAGE
-function initIndexPage() {
-  // intro slider
-
+// intro slider
+function initIndexPageIntroSlider() {
   const introSlider = new Swiper(".intro__slider", {
     loop: true,
     navigation: {
@@ -286,9 +328,10 @@ function initIndexPage() {
       prevEl: ".intro__prev",
     },
   });
+}
 
+function initReviewsSlider() {
   // reviews slider
-
   const reviewsSlider = new Swiper(".reviews__slider", {
     loop: false,
     spaceBetween: 20,
@@ -304,7 +347,9 @@ function initIndexPage() {
       clickable: "true",
     },
   });
+}
 
+function initReviewsFullScreen() {
   // скриншот отзыва на весь экран
 
   const reviewsImages = document.querySelectorAll(".reviews__preview");
@@ -339,7 +384,9 @@ function initIndexPage() {
       body.classList.remove("lock");
     }
   });
+}
 
+function initForms() {
   // ===== ФОРМЫ
 
   // Отправка форм, расположеных на странице
@@ -412,4 +459,40 @@ function initIndexPage() {
 
   feedbackNameAll.forEach(removeOnFocus);
   feedbackPhoneAll.forEach(removeOnFocus);
+}
+
+// question/answer accordion
+
+function initQAaccordion() {
+  const qa_items = document.querySelectorAll(".qa__item");
+  const qa_headings = document.querySelectorAll(".qa__heading");
+
+  qa_headings.forEach((item) =>
+    item.addEventListener("click", handleAccordionClick)
+  );
+
+  function handleAccordionClick(e) {
+    const target = e.target;
+    const qa_item = target.closest(".qa__item");
+    const qa_info = qa_item.children[1];
+    const isActive = qa_item.classList.contains("active");
+    if (isActive) {
+      qa_item.classList.remove("active");
+      qa_info.style.maxHeight = null;
+    } else {
+      qa_items.forEach((item) => {
+        item.classList.remove("active");
+        item.children[1].style.maxHeight = null;
+      });
+      qa_item.classList.add("active");
+      qa_info.style.maxHeight = qa_info.scrollHeight + "px";
+    }
+
+    window.addEventListener("resize", () => {
+      qa_items.forEach((item) => {
+        item.classList.remove("active");
+        item.children[1].style.maxHeight = null;
+      });
+    });
+  }
 }

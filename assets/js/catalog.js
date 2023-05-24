@@ -1,7 +1,12 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const catalog = document.querySelector(".catalog");
-  if (catalog) {
+  const index_page = document.querySelector(".index__page");
+  if (index_page) {
     initCatalog(16);
+  }
+
+  const our_clients_page = document.querySelector(".our-clients__page");
+  if (our_clients_page) {
+    initCatalog(4);
   }
 });
 

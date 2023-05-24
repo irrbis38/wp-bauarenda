@@ -102,37 +102,13 @@ get_header();
 			</div>
 		</div>
 	</section>
-	<div class="fixed">
-		<button class="fixed__toTop"><span class="button-bg"></span><img src="<?php echo bloginfo( 'template_url' ); ?>/assets/images/fixed/arrow-top.svg"
-				alt="подняться наверх"></button>
-		<button class="fixed__showField">
-			<svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
-				<circle cx="25" cy="25" r="25" fill="#FFCB09"></circle>
-				<path
-					d="M22.9922 26.9067C24.4998 28.4361 26.324 29.6169 28.3366 30.3662L31.0594 28.1995C31.1401 28.1439 31.2358 28.1141 31.3338 28.1141C31.4319 28.1141 31.5276 28.1439 31.6083 28.1995L36.6638 31.4567C36.8558 31.5721 37.0182 31.7306 37.1384 31.9195C37.2586 32.1085 37.3332 32.3228 37.3563 32.5456C37.3794 32.7683 37.3504 32.9934 37.2716 33.203C37.1928 33.4126 37.0663 33.601 36.9022 33.7534L34.5333 36.0934C34.194 36.4286 33.7771 36.6746 33.3196 36.8094C32.8622 36.9443 32.3784 36.9638 31.9116 36.8662C27.2549 35.9044 22.9627 33.6519 19.5255 30.3662C16.1646 27.0477 13.8389 22.8253 12.8305 18.2112C12.7309 17.7516 12.7517 17.274 12.8909 16.8248C13.0301 16.3756 13.2829 15.97 13.625 15.6473L16.0805 13.2784C16.2325 13.1222 16.4178 13.0025 16.6226 12.9281C16.8274 12.8537 17.0463 12.8266 17.2631 12.8488C17.4798 12.8711 17.6887 12.9421 17.8742 13.0565C18.0596 13.1709 18.2168 13.3258 18.3338 13.5095L21.6994 18.5001C21.7575 18.5784 21.7888 18.6734 21.7888 18.7709C21.7888 18.8684 21.7575 18.9634 21.6994 19.0417L19.4822 21.7067C20.2518 23.6791 21.4508 25.4554 22.9922 26.9067Z"
-					fill="white"></path>
-			</svg>
-		</button>
-	</div>
-	<div class="fixed__feedback">
-		<div class="fixed__close">
-			<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-				<path d="M1.5 1.57617L22.5 22.5762M22.5 1.57617L1.5 22.5762" stroke="white" stroke-width="2"></path>
-			</svg>
-		</div>
-		<h3 class="fixed__feedbackTitle">Обратная связь</h3>
-		<form class="fixed__form" action="#" novalidate>
-			<p class="error__message">Заполните все обязательные для заполнения поля.</p>
-			<div class="feedback__item fixed__item">
-				<input class="fixed__name feedback__name" type="text" placeholder="Имя*" name="name" required>
-			</div>
-			<div class="feedback__item fixed__item">
-				<input class="fixed__name feedback__name" type="text" placeholder="Телефон*" name="phone" minlength="9" required>
-			</div>
-			<input class="fixed__submit btn__yellow btn__link" type="submit" value="Отправить" name="submit">
-		</form>
-	</div>
-	<div class="fixed__bg"></div>
+
+
+	<?php
+	get_template_part( 'template-parts/fixed' );
+	?>
+
+
 	<section class="technics">
 		<div class="container">
 			<h2 class="technics__title block__title">Наша спецтехника</h2>
@@ -228,145 +204,13 @@ get_header();
 			</div><a class="about__link btn__link btn__yellow" href="#">Подробнее</a>
 		</div>
 	</section>
-	<section class="catalog">
-		<div class="container">
-			<h2 class="catalog__title block__title">Каталог техники</h2>
-			<div class="catalog__nav">
-				<div class="catalog__search">
-					<input class="catalog__input" type="text" placeholder="Поиск"><img class="catalog__icon" src="<?php echo bloginfo( 'template_url' ); ?>/assets/images/catalog/search.svg"
-						alt="search">
-				</div>
-
-				<div class="catalog__sort"><span class="catalog__sort-type" data-type="popularity">Сортировать по</span><img class="catalog__arrow"
-						src="<?php echo bloginfo( 'template_url' ); ?>/assets/images/catalog/arrow-down.svg" alt="">
-					<ul class="catalog__sort-list">
-						<li class="catalog__sort-item" data-type="popularity" data-text="По популярности">Популярности</li>
-						<li class="catalog__sort-item" data-type="fromMinToMax" data-text="По возрастанию">Возрастанию цены</li>
-						<li class="catalog__sort-item" data-type="fromMaxToMin" data-text="По убыванию">Убыванию цены</li>
-					</ul>
-				</div>
-			</div>
-			<div class="catalog__categories-wrapper">
-				<ul class="catalog__categories">
-					<li class="catalog__category active" data-type="all">Все</li>
-					<li class="catalog__category" data-type="excavator">Экскаваторы-погрузчики</li>
-					<li class="catalog__category" data-type="tipper">Бульдозеры</li>
-					<li class="catalog__category" data-type="dozer">Гусеничный экскаватор</li>
-					<li class="catalog__category" data-type="loader">Погрузчик</li>
-					<li class="catalog__category" data-type="fLoader">Фронтальный погрузчик</li>
-					<li class="catalog__category" data-type="wheelDigger">Колесный экскаватор</li>
-					<li class="catalog__category" data-type="flail">Тралы и низкорамные площадки</li>
-					<li class="catalog__category" data-type="truck">Грунтовой каток</li>
-					<li class="catalog__category" data-type="crane">Автокран</li>
-					<li class="catalog__category" data-type="grader">Автогрейдер</li>
-					<li class="catalog__category" data-type="telescopicLoader">Телескопический погрузчик</li>
-					<li class="catalog__category" data-type="mini">Мини-техника</li>
-					<li class="catalog__category" data-type="hydraulicHammer">Гидромолоты</li>
-					<li class="catalog__category" data-type="drillingEquipment">Ямобур (буровая техника)</li>
-				</ul>
-				<div class="clearfix"></div>
-			</div>
 
 
-			<!-- Get site url -->
-			<div class="page-info-ajax" style="display:none;">
-				<p class="ajaxurl">
-					<?php echo site_url() ?>/wp-admin/admin-ajax.php
-				</p>
-			</div>
+	<?php
+	$params = [ 'posts_per_page' => 16 ];
+	get_template_part( 'template-parts/catalog', null, $params );
+	?>
 
-			<div class="catalog__wrapper">
-				<?php
-				$query_posts = new WP_Query( [ 
-					'post_type' => 'technics',
-					'posts_per_page' => 16,
-					'meta_key' => 'catalog__popularity',
-					'orderby' => 'meta_value_num',
-					'order' => 'DESC',
-					'cat_tech' => 'all'
-				] );
-
-				if ( $query_posts->have_posts() ) :
-					while ( $query_posts->have_posts() ) :
-						$query_posts->the_post();
-						?>
-						<div class="catalog__item">
-							<a href="#" class="catalog__link"></a>
-
-							<div class="catalog__img">
-								<img src="<?php echo get_field( 'catalog__img' ); ?>" alt="<?php the_title(); ?>" />
-							</div>
-
-							<a href="#" class="catalog__button">Подробнее</a>
-
-							<div class="catalog__info">
-								<h4 class="catalog__header">
-									<?php the_title(); ?>
-								</h4>
-
-								<div class="catalog__options">
-									<div class="catalog__feature">
-										<p class="catalog__name">
-											<?php echo get_field( 'catalog__name1' ); ?>
-										</p>
-										<p class="catalog__value">
-											<?php echo get_field( 'catalog__value1' ); ?>
-										</p>
-									</div>
-
-									<div class="catalog__feature">
-										<p class="catalog__name">
-											<?php echo get_field( 'catalog__name2' ); ?>
-										</p>
-										<p class="catalog__value">
-											<?php echo get_field( 'catalog__value2' ); ?>
-										</p>
-									</div>
-
-									<div class="catalog__feature">
-										<p class="catalog__name">
-											<?php echo get_field( 'catalog__name3' ); ?>
-										</p>
-										<p class="catalog__value">
-											<?php echo get_field( 'catalog__value3' ); ?>
-										</p>
-									</div>
-								</div>
-
-								<p class="catalog__price">
-									<?php echo get_field( 'catalog__price' ); ?> BYN
-								</p>
-							</div>
-
-						</div>
-						<?php
-					endwhile;
-					wp_reset_postdata();
-					?>
-
-					<div class="page-info-ajax" style="display:none;">
-						<p class="max_pages">
-							<?php echo $query->max_num_pages; ?>
-						</p>
-					</div>
-
-					<?php
-				endif;
-				?>
-
-
-			</div>
-
-			<div class="catalog__nofound">
-				<p class="catalog__sorry">Нам жаль, но по вашему запросу ничего не нашлось</p>
-				<div class="catalog__recommendation">
-					<p>Скорректируйте ваш запрос или</p>
-					<p><a href="#">передите в каталог</a></p>
-				</div>
-			</div>
-			<button class="catalog__more btn__link btn__grey">Показать больше</button>
-		</div>
-	</section>
 	<section class="feedback first__feedback">
 		<div class="container">
 			<div class="feedback__wrapper">
@@ -690,75 +534,13 @@ get_header();
 				сотрудничеству!</p>
 		</div>
 	</section>
-	<section class="reviews">
-		<div class="container">
-			<h2 class="reviews__title block__title">Отзывы</h2>
-			<div class="reviews__slider-container">
-				<div class="reviews__slider swiper">
-					<div class="reviews__wrapper swiper-wrapper">
 
-						<?php
-						$query_reviews = new WP_Query( [ 
-							'post_type' => 'reviews',
-							'posts_per_page' => -1,
-						] );
-
-						if ( $query_reviews->have_posts() ) :
-							while ( $query_reviews->have_posts() ) :
-								$query_reviews->the_post();
-								?>
-
-								<div class="reviews__item swiper-slide">
-									<div class="reviews__preview">
-										<div class="reviews__img"><img src="<?php echo get_field( 'reviews__img' ); ?>" alt="<?php the_title(); ?>" /></div>
-									</div>
-									<div class="reviews__info">
-										<h4 class="reviews__header">
-											<?php the_title(); ?>
-										</h4>
-										<p class="reviews__text">
-											<?php echo get_field( 'reviews__text' ); ?>
-										</p>
-										<a class="reviews__link" href="#"></a>
-									</div>
-								</div>
+	<?php
+	$reviews_params = [ 'posts_per_page' => 6 ];
+	get_template_part( 'template-parts/reviews', null, $reviews_params );
+	?>
 
 
-
-								<?php
-							endwhile;
-							wp_reset_postdata();
-
-						endif;
-						?>
-
-
-					</div>
-				</div>
-				<div class="reviews__nav">
-					<button class="reviews__prev"><span class="reviews__navButton"></span><img src="<?php echo bloginfo( 'template_url' ); ?>/assets/images/intro/intro-prev.svg"
-							alt="prev"></button>
-					<button class="reviews__next"><span class="reviews__navButton"></span><img src="<?php echo bloginfo( 'template_url' ); ?>/assets/images/intro/intro-next.svg"
-							alt="next"></button>
-				</div>
-			</div>
-		</div>
-		<div class="reviews__pagination">
-			<div class="reviews__dot"></div>
-			<div class="reviews__dot"></div>
-			<div class="reviews__dot"></div>
-		</div>
-		<div class="reviews__fullscreen">
-			<div class="reviews__fullscreen-wrapper"><img class="reviews__fullscreen-img" src="<?php echo bloginfo( 'template_url' ); ?>/assets/images/reviews/rev1.jpg"
-					alt="скриншот отзыва">
-				<div class="reviews__fullscreen-closer">
-					<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<path d="M1.5 1.57617L22.5 22.5762M22.5 1.57617L1.5 22.5762" stroke="white" stroke-width="2"></path>
-					</svg>
-				</div>
-			</div>
-		</div>
-	</section>
 	<section class="feedback second__feedback">
 		<div class="container">
 			<h2 class="feedback__title block__title">Обратная связь</h2>
