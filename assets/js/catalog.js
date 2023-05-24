@@ -1,12 +1,12 @@
 document.addEventListener("DOMContentLoaded", function () {
   const catalog = document.querySelector(".catalog");
   if (catalog) {
-    initCatalog();
+    initCatalog(16);
   }
 });
 
 // INIT CATALOG
-function initCatalog() {
+function initCatalog(posts_per_page) {
   const catalog_wrapper = document.querySelector(".catalog__wrapper");
   const load_more_btn = document.querySelector(".catalog__more");
   const catalog_categories = Array.from(
@@ -25,7 +25,7 @@ function initCatalog() {
     sort_type: "catalog__popularity",
     sort_order: "DESC",
     post_offset: 0,
-    posts_per_page: 2,
+    posts_per_page: posts_per_page,
     search_string: "",
   };
 
@@ -258,14 +258,19 @@ function initCatalog() {
 
       catalog_wrapper.append(fragment);
     } else {
-      // cleanup catalog_wrappe
-      catalog_wrapper.innerHTML = "";
+      if (isCleanupNeeded) {
+        // cleanup catalog_wrapper
+        catalog_wrapper.innerHTML = "";
 
-      // show nofound message
-      catalog_nofound.classList.add("active");
+        // show nofound message
+        catalog_nofound.classList.add("active");
 
-      // show catalog__more button
-      load_more_btn.classList.add("hidden");
+        // show catalog__more button
+        load_more_btn.classList.add("hidden");
+      } else {
+        // show catalog__more button
+        load_more_btn.classList.add("hidden");
+      }
     }
   }
 
