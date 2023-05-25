@@ -8,6 +8,11 @@ document.addEventListener("DOMContentLoaded", function () {
   if (our_clients_page) {
     initCatalog(4);
   }
+
+  const our_partners_page = document.querySelector(".our-partners__page");
+  if (our_partners_page) {
+    initCatalog(4);
+  }
 });
 
 // INIT CATALOG
