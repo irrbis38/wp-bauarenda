@@ -13,6 +13,11 @@ document.addEventListener("DOMContentLoaded", function () {
   if (our_partners_page) {
     initCatalog(4);
   }
+
+  const reviews_page = document.querySelector(".reviews__page");
+  if (reviews_page) {
+    initCatalog(4);
+  }
 });
 
 // INIT CATALOG

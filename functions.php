@@ -4,6 +4,62 @@ add_action('wp_enqueue_scripts', 'bauarenda_scripts');
 add_action('init', 'ba_regiser_type_technics');
 add_action('init', 'ba_regiser_type_reviews');
 add_action('init', 'ba_regiser_type_news');
+add_action('init', 'ba_regiser_type_clients');
+add_action('init', 'ba_regiser_type_partners');
+
+// add svg support
+add_filter('upload_mimes', 'svg_upload_allow');
+function svg_upload_allow($mimes)
+{
+  $mimes['svg'] = 'image/svg+xml';
+
+  return $mimes;
+}
+
+// add support both svg mime-types - image/svg and image/svg+xml
+add_filter('wp_check_filetype_and_ext', 'fix_svg_mime_type', 10, 5);
+
+function fix_svg_mime_type($data, $file, $filename, $mimes, $real_mime = '')
+{
+  if (version_compare($GLOBALS['wp_version'], '5.1.0', '>=')) {
+    $dosvg = in_array($real_mime, ['image/svg', 'image/svg+xml']);
+  } else {
+    $dosvg = ('.svg' === strtolower(substr($filename, -4)));
+  }
+  if ($dosvg) {
+    if (current_user_can('manage_options')) {
+
+      $data['ext'] = 'svg';
+      $data['type'] = 'image/svg+xml';
+    } else {
+      $data['ext'] = false;
+      $data['type'] = false;
+    }
+
+  }
+
+  return $data;
+}
+
+// add svg-preview
+add_filter('wp_prepare_attachment_for_js', 'show_svg_in_media_library');
+
+# Формирует данные для отображения SVG как изображения в медиабиблиотеке.
+function show_svg_in_media_library($response)
+{
+
+  if ($response['mime'] === 'image/svg+xml') {
+
+    // С выводом названия файла
+    $response['image'] = [
+      'src' => $response['url'],
+    ];
+  }
+
+  return $response;
+}
+
+
 
 // add styles and scripts
 function bauarenda_scripts()
@@ -182,6 +238,61 @@ function ba_regiser_type_news()
   //   'public' => true,
   //   'hierarchical' => true,
   // ]);
+}
+
+
+// ====== CLIENTS ======
+
+// add custom post type REVIEWS
+function ba_regiser_type_clients()
+{
+  register_post_type('clients', [
+    'labels' => [
+      'name' => 'Клиенты',
+      'singular_name' => 'Клиент',
+      'add_new' => 'Добавить нового',
+      'add_new_item' => 'Добавить нового клиента',
+      'edit_item' => 'Редактировать клиента',
+      'new_item' => 'Новый клиент',
+      'view_item' => 'Посмотреть клиента',
+      'search_items' => 'Найти клиента',
+      'not_found' => 'Клиентов не найдено',
+      'not_found_in_trash' => 'В корзине клиентов не найдено',
+      'parent_item_colon' => '',
+      'menu_name' => 'Клиенты'
+    ],
+    'public' => true,
+    'has_archive' => true,
+    'menu_icon' => 'dashicons-screenoptions',
+    'supports' => ['title']
+  ]);
+}
+
+// ====== PARTNERS ======
+
+// add custom post type REVIEWS
+function ba_regiser_type_partners()
+{
+  register_post_type('partners', [
+    'labels' => [
+      'name' => 'Партнёры',
+      'singular_name' => 'Пратнёр',
+      'add_new' => 'Добавить нового',
+      'add_new_item' => 'Добавить нового партнёра',
+      'edit_item' => 'Редактировать партнёра',
+      'new_item' => 'Новый партнёр',
+      'view_item' => 'Посмотреть партнёра',
+      'search_items' => 'Найти партнёра',
+      'not_found' => 'Партнёров не найдено',
+      'not_found_in_trash' => 'В корзине партнёров не найдено',
+      'parent_item_colon' => '',
+      'menu_name' => 'Партнёры'
+    ],
+    'public' => true,
+    'has_archive' => true,
+    'menu_icon' => 'dashicons-screenoptions',
+    'supports' => ['title']
+  ]);
 }
 
 
