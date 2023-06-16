@@ -1,308 +1,305 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const index_page = document.querySelector(".index__page");
-  if (index_page) {
-    initCatalog(16);
-  }
-
-  const our_clients_page = document.querySelector(".our-clients__page");
-  if (our_clients_page) {
-    initCatalog(4);
-  }
-
-  const our_partners_page = document.querySelector(".our-partners__page");
-  if (our_partners_page) {
-    initCatalog(4);
-  }
-
-  const reviews_page = document.querySelector(".reviews__page");
-  if (reviews_page) {
-    initCatalog(4);
+  const catalog = document.querySelector(".catalog");
+  if (catalog) {
+    initCatalog();
   }
 });
 
-// INIT CATALOG
-function initCatalog(posts_per_page) {
-  const catalog_wrapper = document.querySelector(".catalog__wrapper");
-  const load_more_btn = document.querySelector(".catalog__more");
-  const catalog_categories = Array.from(
-    document.querySelectorAll(".catalog__category")
-  );
-  const catalog_sort = document.querySelector(".catalog__sort");
-  const catalog_sort_items = Array.from(
-    document.querySelectorAll(".catalog__sort-item")
-  );
-  const sort_type_item = document.querySelector(".catalog__sort-type");
-  const catalog_nofound = document.querySelector(".catalog__nofound");
+// function - decorator
+function debounce(callee, timeoutMs) {
+  return function perform(...args) {
+    let previousCall = this.lastCall;
+    this.lastCall = Date.now();
 
-  // options for query to get posts
-  const query_options = {
-    selected_category: "all",
-    sort_type: "catalog__popularity",
-    sort_order: "DESC",
-    post_offset: 0,
-    posts_per_page: posts_per_page,
-    search_string: "",
+    if (previousCall && this.lastCall - previousCall <= timeoutMs) {
+      clearTimeout(this.lastCallTimer);
+    }
+
+    this.lastCallTimer = setTimeout(() => callee(...args), timeoutMs);
   };
+}
 
-  let page_number = 1;
-  let pages_amount = 1;
-  let posts_amount = 0;
+// INIT CATALOG
+function initCatalog() {
+  // handle accordions in catalog__categories
+  const categories_titles = document.querySelectorAll(".categories__title");
+  const categories_groups = document.querySelectorAll(".categories__group");
 
-  selectCategory();
-  showCatalogSortList();
-  hideCatalogSortList();
-  selectSortOptions();
-
-  // select catalog category
-  function selectCategory() {
-    catalog_categories.forEach((el) =>
-      el.addEventListener("click", (e) => {
-        const isActive = e.target.classList.contains("active");
-        if (!isActive) {
-          page_number = 1;
-
-          catalog_categories.forEach((item) => item.classList.remove("active"));
-          e.target.classList.add("active");
-
-          // set category
-          query_options.selected_category = e.target.dataset.type;
-
-          // reset post offset
-          query_options.post_offset = 0;
-
-          // get posts
-          getPostData("ajax_sort", true);
-        }
-      })
-    );
-  }
-
-  // show and hide catalog sort list by hover
-
-  function showCatalogSortList() {
-    catalog_sort.addEventListener("mouseenter", () => {
-      catalog_sort.classList.add("active");
-    });
-  }
-
-  function hideCatalogSortList() {
-    catalog_sort.addEventListener("mouseleave", () => {
-      catalog_sort.classList.remove("active");
-    });
-  }
-
-  // hide catalog sort list by click category
-  catalog_sort_items.forEach((item) =>
-    item.addEventListener("click", () =>
-      catalog_sort.classList.remove("active")
-    )
+  categories_titles.forEach((title) =>
+    title.addEventListener("click", (e) => {
+      requestAnimationFrame(() => toggleCategoriesList(e));
+    })
   );
 
-  // select sort-item
-  function selectSortOptions() {
-    const sortOptions = document.querySelectorAll(".catalog__sort-item");
+  function toggleCategoriesList(e) {
+    const title = e.target.closest(".categories__title");
+    const group = title.closest(".categories__group");
+    const list = title.nextElementSibling;
+    const isGroupActive = group.classList.contains("active");
 
-    sortOptions.forEach((option) =>
-      option.addEventListener("click", handleSelectSortOptions)
-    );
-  }
-
-  function handleSelectSortOptions(event) {
-    const text = event.target.dataset.text;
-    if (sort_type_item.textContent !== text) {
-      page_number = 1;
-
-      sort_type_item.textContent = text;
-
-      const sort_type = event.target.dataset.type;
-
-      // set sort type
-      if (sort_type === "popularity") {
-        query_options.sort_type = "catalog__popularity";
-      } else {
-        query_options.sort_type = "catalog__price";
-      }
-
-      // set sort order
-      if (sort_type === "fromMinToMax") {
-        query_options.sort_order = "ASC";
-      } else {
-        query_options.sort_order = "DESC";
-      }
-
-      // reset post offset
-      query_options.post_offset = 0;
-
-      // get posts
-      getPostData("ajax_sort", true);
+    if (isGroupActive) {
+      group.classList.remove("active");
+      list.style.maxHeight = null;
+    } else {
+      categories_groups.forEach((group) => {
+        group.classList.remove("active");
+        const list = group.children[1];
+        list.style.maxHeight = null;
+      });
+      group.classList.add("active");
+      list.style.maxHeight = list.scrollHeight + "px";
     }
   }
 
-  // add handler to "load more" button
-  load_more_btn.addEventListener("click", () => {
-    //TODO: hide load__more button if no more posts
+  // handle all input range in filters
 
-    // reset post offset
-    query_options.post_offset += query_options.posts_per_page;
+  const filters_range_inputs = document.querySelectorAll(".filters__range");
 
-    page_number += 1;
+  filters_range_inputs.forEach((rangeInput) =>
+    rangeInput.addEventListener("input", rangeInputHandler)
+  );
 
-    // get posts
-    getPostData("ajax_sort", false);
+  function rangeInputHandler(e) {
+    // get current inputs - min and max
+    let minInputRange, maxInputRange;
+    const isMinInputRange = e.target.classList.contains("filter__inputMin");
+    const isMaxInputRange = e.target.classList.contains("filter__inputMax");
+    if (isMinInputRange) {
+      minInputRange = e.target;
+      maxInputRange = minInputRange.nextElementSibling;
+    } else if (isMaxInputRange) {
+      maxInputRange = e.target;
+      minInputRange = maxInputRange.previousElementSibling;
+    }
+
+    // get elements
+    const filter_block = minInputRange.closest(".filters__block");
+    const track = filter_block.querySelector(".filters__track");
+    const min = filter_block.querySelector(".filters__valueMin");
+    const max = filter_block.querySelector(".filters__valueMax");
+
+    // convert values to number
+    let minValue = parseInt(minInputRange.value);
+    let maxValue = parseInt(maxInputRange.value);
+
+    // minDifference is the minimum value by which min and max can converge
+    let minDifference;
+
+    if (maxInputRange.max - minInputRange.min <= 10) {
+      minDifference = 1;
+    } else if (maxInputRange.max - minInputRange.min <= 100) {
+      minDifference = 3;
+    } else {
+      minDifference = 10;
+    }
+
+    // if the input cannot be moved further
+    if (maxValue - minValue < minDifference) {
+      if (isMinInputRange) {
+        minInputRange.value = maxValue - minDifference;
+      } else {
+        maxInputRange.value = minValue + minDifference;
+      }
+    } else {
+      // otherwise calculates the value of the  two curret inputs and displays their values
+      min.textContent = `от ${minValue}`;
+      max.textContent = `до ${maxValue}`;
+      let left =
+        ((minValue - minInputRange.min) * 100) /
+          (minInputRange.max - minInputRange.min) +
+        "%";
+      let right =
+        ((maxInputRange.max - maxValue) * 100) /
+          (maxInputRange.max - maxInputRange.min) +
+        "%";
+      track.style.left = left;
+      track.style.right = right;
+    }
+  }
+
+  // add selected filter
+
+  const filters_current_container = document.querySelector(".filters__current");
+
+  filters_range_inputs.forEach((rangeInput) =>
+    rangeInput.addEventListener("change", addNewFilter)
+  );
+
+  // add new filter to DOM of update existing
+  function addNewFilter(e) {
+    const filters_block = e.target.closest(".filters__block");
+    const filterName = filters_block.children[0].textContent;
+    const filters_elements = Array.from(
+      filters_current_container.querySelectorAll(".filters__elem")
+    );
+    const selectedFilter = filters_elements.find(
+      (elem) => elem.dataset.filter === filterName
+    );
+    const isFilterExist = Boolean(selectedFilter);
+
+    const valueMin = filters_block.children[2].children[0].textContent;
+    const valueMax = filters_block.children[2].children[1].textContent;
+    const title = `${filterName} ${valueMin} ${valueMax}`;
+
+    // If there is no such filter yet, then create.
+    if (!isFilterExist) {
+      const newFilter = createNewFilter(title, filterName);
+      filters_current_container.prepend(newFilter);
+      filters_current_container.classList.add("active");
+
+      // update counter
+      updateCounter();
+
+      // add listener to clear filters__elemText after animation
+      const newElemText = filters_current_container.children[0].children[0];
+      newElemText.addEventListener("animationend", (e) => {
+        e.target.classList.remove("animated");
+      });
+
+      // add listener to remove filter button
+      const removeButton = filters_current_container.children[0].children[1];
+
+      removeButton.addEventListener("click", removeSingleFilter);
+    } else {
+      // Otherwise, update an existing
+      selectedFilter.children[0].classList.add("animated");
+      selectedFilter.children[0].textContent = title;
+    }
+  }
+
+  // create and return new filter
+  function createNewFilter(title, filterName) {
+    const filtersElem = document.createElement("div");
+    filtersElem.classList.add("filters__elem");
+    filtersElem.dataset.filter = filterName;
+    filtersElem.innerHTML = `
+    <span class="filters__elemText">${title}</span>
+    <button class="filters__elemRemove">
+      <svg width="10" height="11" viewBox="0 0 10 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0.515625 1L9.51563 10M9.51563 1L0.515625 10" stroke="#E3E3E3" stroke-linejoin="round"></path>
+      </svg>
+    </button>
+    `;
+    return filtersElem;
+  }
+
+  // remove just one filter
+  function removeSingleFilter(event) {
+    const filters_element = event.target.closest(".filters__elem");
+    const dataFilter = filters_element.dataset.filter;
+
+    filters_range_inputs.forEach((input) => {
+      if (input.dataset.filter === dataFilter) {
+        const isMin = input.classList.contains("filter__inputMin");
+        const isMax = input.classList.contains("filter__inputMax");
+        if (isMin) {
+          input.value = input.min;
+          resetInputRangeTrack(input);
+        } else if (isMax) {
+          input.value = input.max;
+          resetInputRangeTrack(input);
+        }
+      }
+    });
+
+    filters_element.remove();
+
+    removeFiltersCurrentActiveClass();
+
+    updateCounter(filters_element.length - 1);
+  }
+
+  function resetInputRangeTrack(input) {
+    const filters_track =
+      input.closest(".filters__set").children[0].children[0];
+    filters_track.style.left = 0;
+    filters_track.style.right = 0;
+  }
+
+  function removeFiltersCurrentActiveClass() {
+    const activeFilters = document.querySelectorAll(".filters__elem");
+    const isAnyFilterEnable = Boolean(activeFilters.length);
+
+    if (!isAnyFilterEnable) {
+      const filters_current = document.querySelector(".filters__current");
+      filters_current.classList.remove("active");
+    }
+  }
+
+  // add listener to button of clear current filters
+
+  const filters_clear = document.querySelector(".filters__clear");
+
+  filters_clear.addEventListener("click", clearAllActiveFilters);
+
+  function clearAllActiveFilters() {
+    // reset all inputs and tracks to default
+    filters_range_inputs.forEach((input) => {
+      const isMin = input.classList.contains("filter__inputMin");
+      if (isMin) {
+        input.value = input.min;
+        resetInputRangeTrack(input);
+      } else {
+        input.value = input.max;
+        resetInputRangeTrack(input);
+      }
+    });
+
+    // remove all '.filters__elem' from DOM
+    const filters_elements = document.querySelectorAll(".filters__elem");
+
+    filters_elements.forEach((el) => el.remove());
+
+    // remove class 'active' from '.filters__current'
+
+    removeFiltersCurrentActiveClass();
+
+    // UPDATE COUNTER
+    updateCounter(0);
+  }
+
+  function updateCounter(activeFilters = null) {
+    let activeFiltersCount = 0;
+    if (!activeFilters) {
+      const activeFilters = document.querySelectorAll(".filters__elem");
+      activeFiltersCount = activeFilters.length;
+    }
+    const counter = document.querySelector(".filters__counter");
+    counter.textContent = activeFiltersCount;
+  }
+
+  // TOGGLE FILTER LIST
+
+  const filters = document.querySelector(".filters");
+  const filters_list = document.querySelector(".filters__list");
+  const filtersShowButton = document.querySelector(".filters__show");
+
+  // show filter list by 'filters__show' hover button
+  filtersShowButton.addEventListener("mouseenter", () => {
+    filtersShowButton.classList.add("active");
+    filters_list.classList.add("visible");
   });
 
-  //=================== CATALOG SEARCH
+  // hide filter list by mouseleave from 'filters__show' and 'filters__list'
 
-  // function - decorator
-  function debounce(callee, timeoutMs) {
-    return function perform(...args) {
-      let previousCall = this.lastCall;
-      this.lastCall = Date.now();
+  filters.addEventListener("mouseleave", (e) => {
+    const isfiltersList = e.currentTarget.closest(".filters__list");
+    const isfiltersShowButton = e.currentTarget.closest(".filters__show");
 
-      if (previousCall && this.lastCall - previousCall <= timeoutMs) {
-        clearTimeout(this.lastCallTimer);
-      }
-
-      this.lastCallTimer = setTimeout(() => callee(...args), timeoutMs);
-    };
-  }
-
-  // function that handles data input
-  function handleSearchInput(e) {
-    query_options.search_string = e.target.value;
-
-    // get posts
-    getPostData("ajax_sort", true);
-  }
-
-  // if time between keypress less than 250ms handleSearchInput doesn't execute
-  const debouncedHandle = debounce(handleSearchInput, 250);
-
-  // add listener to catalog search input
-  const catalog_input = document.querySelector(".catalog__input");
-  catalog_input.addEventListener("input", debouncedHandle);
-
-  //=================== CATALOG RENDER FUNCTIONS
-  // create catalog item
-  function createCatalogItem(itemData) {
-    const {
-      title,
-      imgUrl,
-      name1,
-      name2,
-      name3,
-      value1,
-      value2,
-      value3,
-      price,
-    } = itemData;
-
-    const catalog_item = document.createElement("DIV");
-    catalog_item.classList.add("catalog__item");
-    catalog_item.innerHTML = `<a href="#" class="catalog__link"></a>
-  
-      <div class="catalog__img">
-        <img src="${imgUrl}" alt="${title}" />
-      </div>
-  
-      <a href="#" class="catalog__button">Подробнее</a>
-  
-      <div class="catalog__info">
-        <h4 class="catalog__header">${title}</h4>
-  
-        <div class="catalog__options">
-          <div class="catalog__feature">
-            <p class="catalog__name">${name1}</p>
-            <p class="catalog__value">${value1}</p>
-          </div>
-  
-          <div class="catalog__feature">
-            <p class="catalog__name">${name2}</p>
-            <p class="catalog__value">${value2}</p>
-          </div>
-  
-          <div class="catalog__feature">
-            <p class="catalog__name">${name3}</p>
-            <p class="catalog__value">${value3}</p>
-          </div>
-        </div>
-        <!-- /.catalog__info -->
-  
-        <p class="catalog__price">${price} BYN</p>
-      </div>
-      <!-- /.catalog__info -->`;
-
-    return catalog_item;
-  }
-
-  function renderCatalogItems(isCleanupNeeded, postsData) {
-    const isPostsExisct = postsData.length > 1;
-    if (isPostsExisct) {
-      // remove nofound message
-      catalog_nofound.classList.remove("active");
-
-      // show catalog__more button
-      load_more_btn.classList.remove("hidden");
-
-      // cleanup catalog_wrapper if it's need
-      if (isCleanupNeeded) {
-        catalog_wrapper.innerHTML = "";
-      }
-
-      // hide load__more button if no more posts
-      posts_amount = postsData[0].length;
-
-      pages_amount = Math.ceil(posts_amount / query_options.posts_per_page);
-
-      if (page_number >= pages_amount) {
-        load_more_btn.classList.add("hidden");
-      }
-
-      // extract posts data
-
-      const data = postsData.slice(1);
-
-      // create catalog items
-      const catalog_elements = data.map((itemData) =>
-        createCatalogItem(itemData)
-      );
-
-      const fragment = document.createDocumentFragment();
-
-      catalog_elements.forEach((el) => fragment.append(el));
-
-      catalog_wrapper.append(fragment);
-    } else {
-      if (isCleanupNeeded) {
-        // cleanup catalog_wrapper
-        catalog_wrapper.innerHTML = "";
-
-        // show nofound message
-        catalog_nofound.classList.add("active");
-
-        // show catalog__more button
-        load_more_btn.classList.add("hidden");
-      } else {
-        // show catalog__more button
-        load_more_btn.classList.add("hidden");
-      }
+    if (!isfiltersList && !isfiltersShowButton) {
+      filtersShowButton.classList.remove("active");
+      filters_list.classList.remove("visible");
     }
-  }
+  });
 
-  // ================= GET POST FROM WORDPRESS DATABASE
-  function getPostData(action, isCleanupNeeded) {
-    const url = document.querySelector(".ajaxurl").textContent;
-    $.ajax({
-      url: url,
-      type: "POST",
-      data: {
-        action: action, // functions.php
-        query_options,
-      },
-      success: function (results) {
-        // console.log(results);
-        renderCatalogItems(isCleanupNeeded, results);
-      },
-    });
-  }
+  // hide filter list by ckick beyond 'filters__show' and 'filters__list'
+
+  window.addEventListener("click", (e) => {
+    const isfiltersList = e.target.closest(".filters__list");
+    const isfiltersShowButton = e.target.closest(".filters__show");
+    if (!isfiltersList && !isfiltersShowButton) {
+      filtersShowButton.classList.remove("active");
+      filters_list.classList.remove("visible");
+    }
+  });
 }

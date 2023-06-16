@@ -10,140 +10,559 @@
 ?>
 
 <section class="catalog">
-	<div class="container">
-		<h2 class="catalog__title block__title">Каталог техники</h2>
-		<div class="catalog__nav">
-			<div class="catalog__search">
-				<input class="catalog__input" type="text" placeholder="Поиск"><img class="catalog__icon" src="<?php echo bloginfo( 'template_url' ); ?>/assets/images/catalog/search.svg"
-					alt="search">
-			</div>
+  <div class="container">
+    <h2 class="catalog__title block__title">Каталог техники</h2>
+    <div class="catalog__container">
+      <div class="catalog__categories categories">
+        <div class="categories__group">
+          <div class="categories__title"><span>Землеройная техника</span><span class="categories__arrow">
+              <svg width="9" height="6" viewBox="0 0 9 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 1L4.5 5L8 1" stroke="#1F1E1D" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg></span></div>
+          <ul class="categories__list">
+            <li class="categories__item">
+              <button class="categories__btn">Бульдозеры</button>
+            </li>
+            <li class="categories__item">
+              <button class="categories__btn">Буры</button>
+            </li>
+            <li class="categories__item">
+              <button class="categories__btn">Мини техника</button>
+            </li>
+            <li class="categories__item">
+              <button class="categories__btn">Колесные экскаваторы</button>
+            </li>
+            <li class="categories__item">
+              <button class="categories__btn">Аренда гусеничного экскаватора</button>
+            </li>
+            <li class="categories__item">
+              <button class="categories__btn">Аренда гидромолота</button>
+            </li>
+          </ul>
+        </div>
+        <div class="categories__group">
+          <div class="categories__title"><span>Грузоподъемная техника</span><span class="categories__arrow">
+              <svg width="9" height="6" viewBox="0 0 9 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 1L4.5 5L8 1" stroke="#1F1E1D" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg></span></div>
+          <ul class="categories__list">
+            <li class="categories__item">
+              <button class="categories__btn">Бульдозеры</button>
+            </li>
+            <li class="categories__item">
+              <button class="categories__btn">Буры</button>
+            </li>
+            <li class="categories__item">
+              <button class="categories__btn">Мини техника</button>
+            </li>
+            <li class="categories__item">
+              <button class="categories__btn">Колесные экскаваторы</button>
+            </li>
+            <li class="categories__item">
+              <button class="categories__btn">Аренда гусеничного экскаватора</button>
+            </li>
+            <li class="categories__item">
+              <button class="categories__btn">Аренда гидромолота</button>
+            </li>
+          </ul>
+        </div>
+        <div class="categories__group">
+          <div class="categories__title"><span>Грузовой транспорт</span><span class="categories__arrow">
+              <svg width="9" height="6" viewBox="0 0 9 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 1L4.5 5L8 1" stroke="#1F1E1D" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg></span></div>
+          <ul class="categories__list">
+            <li class="categories__item">
+              <button class="categories__btn">Бульдозеры</button>
+            </li>
+            <li class="categories__item">
+              <button class="categories__btn">Буры</button>
+            </li>
+            <li class="categories__item">
+              <button class="categories__btn">Мини техника</button>
+            </li>
+          </ul>
+        </div>
+        <div class="categories__group">
+          <div class="categories__title"><span>Дорожная техника</span><span class="categories__arrow">
+              <svg width="9" height="6" viewBox="0 0 9 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 1L4.5 5L8 1" stroke="#1F1E1D" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg></span></div>
+          <ul class="categories__list">
+            <li class="categories__item">
+              <button class="categories__btn">Бульдозеры</button>
+            </li>
+            <li class="categories__item">
+              <button class="categories__btn">Буры</button>
+            </li>
+          </ul>
+        </div>
+        <div class="categories__group">
+          <div class="categories__title"><span>Погрузочная техника</span><span class="categories__arrow">
+              <svg width="9" height="6" viewBox="0 0 9 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 1L4.5 5L8 1" stroke="#1F1E1D" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg></span></div>
+          <ul class="categories__list">
+            <li class="categories__item">
+              <button class="categories__btn">Бульдозеры</button>
+            </li>
+            <li class="categories__item">
+              <button class="categories__btn">Буры</button>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="catalog__content">
+        <div class="catalog__filters filters">
+          <div class="filters__current">
+            <button class="filters__clear">Сбросить фильтры</button>
+          </div>
+          <button class="filters__show"><span>Фильтры</span>
+            <svg width="20" height="15" viewBox="0 0 20 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1 3H18.5" stroke="#1F1E1D" stroke-linecap="round" stroke-linejoin="round"></path>
+              <path d="M1 12H18.5" stroke="#1F1E1D" stroke-linecap="round" stroke-linejoin="round"></path>
+              <circle cx="3" cy="3" r="2" fill="white" stroke="#1F1E1D" stroke-linecap="round" stroke-linejoin="round"></circle>
+              <circle cx="17" cy="12" r="2" fill="white" stroke="#1F1E1D" stroke-linecap="round" stroke-linejoin="round"></circle>
+            </svg><span class="filters__counter">0</span>
+          </button>
+          <div class="filters__list">
+            <div class="filters__list-wrapper">
+              <div class="filters__heading">Разделы</div>
+              <div class="filters__categories">
+                <div class="categories__group">
+                  <div class="categories__title"><span>Землеройная техника</span><span class="categories__arrow">
+                      <svg width="9" height="6" viewBox="0 0 9 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 1L4.5 5L8 1" stroke="#1F1E1D" stroke-linecap="round" stroke-linejoin="round"></path>
+                      </svg></span></div>
+                  <ul class="categories__list">
+                    <li class="categories__item">
+                      <button class="categories__btn">Бульдозеры</button>
+                    </li>
+                    <li class="categories__item">
+                      <button class="categories__btn">Буры</button>
+                    </li>
+                    <li class="categories__item">
+                      <button class="categories__btn">Мини техника</button>
+                    </li>
+                    <li class="categories__item">
+                      <button class="categories__btn">Колесные экскаваторы</button>
+                    </li>
+                    <li class="categories__item">
+                      <button class="categories__btn">Аренда гусеничного экскаватора</button>
+                    </li>
+                    <li class="categories__item">
+                      <button class="categories__btn">Аренда гидромолота</button>
+                    </li>
+                  </ul>
+                </div>
+                <div class="categories__group">
+                  <div class="categories__title"><span>Грузоподъемная техника</span><span class="categories__arrow">
+                      <svg width="9" height="6" viewBox="0 0 9 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 1L4.5 5L8 1" stroke="#1F1E1D" stroke-linecap="round" stroke-linejoin="round"></path>
+                      </svg></span></div>
+                  <ul class="categories__list">
+                    <li class="categories__item">
+                      <button class="categories__btn">Бульдозеры</button>
+                    </li>
+                    <li class="categories__item">
+                      <button class="categories__btn">Буры</button>
+                    </li>
+                    <li class="categories__item">
+                      <button class="categories__btn">Мини техника</button>
+                    </li>
+                    <li class="categories__item">
+                      <button class="categories__btn">Колесные экскаваторы</button>
+                    </li>
+                    <li class="categories__item">
+                      <button class="categories__btn">Аренда гусеничного экскаватора</button>
+                    </li>
+                    <li class="categories__item">
+                      <button class="categories__btn">Аренда гидромолота</button>
+                    </li>
+                  </ul>
+                </div>
+                <div class="categories__group">
+                  <div class="categories__title"><span>Грузовой транспорт</span><span class="categories__arrow">
+                      <svg width="9" height="6" viewBox="0 0 9 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 1L4.5 5L8 1" stroke="#1F1E1D" stroke-linecap="round" stroke-linejoin="round"></path>
+                      </svg></span></div>
+                  <ul class="categories__list">
+                    <li class="categories__item">
+                      <button class="categories__btn">Бульдозеры</button>
+                    </li>
+                    <li class="categories__item">
+                      <button class="categories__btn">Буры</button>
+                    </li>
+                    <li class="categories__item">
+                      <button class="categories__btn">Мини техника</button>
+                    </li>
+                  </ul>
+                </div>
+                <div class="categories__group">
+                  <div class="categories__title"><span>Дорожная техника</span><span class="categories__arrow">
+                      <svg width="9" height="6" viewBox="0 0 9 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 1L4.5 5L8 1" stroke="#1F1E1D" stroke-linecap="round" stroke-linejoin="round"></path>
+                      </svg></span></div>
+                  <ul class="categories__list">
+                    <li class="categories__item">
+                      <button class="categories__btn">Бульдозеры</button>
+                    </li>
+                    <li class="categories__item">
+                      <button class="categories__btn">Буры</button>
+                    </li>
+                  </ul>
+                </div>
+                <div class="categories__group">
+                  <div class="categories__title"><span>Погрузочная техника</span><span class="categories__arrow">
+                      <svg width="9" height="6" viewBox="0 0 9 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 1L4.5 5L8 1" stroke="#1F1E1D" stroke-linecap="round" stroke-linejoin="round"></path>
+                      </svg></span></div>
+                  <ul class="categories__list">
+                    <li class="categories__item">
+                      <button class="categories__btn">Бульдозеры</button>
+                    </li>
+                    <li class="categories__item">
+                      <button class="categories__btn">Буры</button>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="filters__heading">Фильтры</div>
+              <div class="filters__wrapper"></div>
+              <div class="filters__block">
+                <h4 class="filters__name">Глубина копания</h4>
+                <div class="filters__set">
+                  <div class="filters__slider">
+                    <div class="filters__track"></div>
+                  </div>
+                  <div class="filters__inputs">
+                    <input class="filter__inputMin filters__range" type="range" min="4" max="8" value="4" step="1" data-filter="Глубина копания" />
+                    <input class="filter__inputMax filters__range" type="range" min="4" max="8" value="8" step="1" data-filter="Глубина копания" />
+                  </div>
+                </div>
+                <div class="filters__values">
+                  <p class="filters__valueMin">от 4</p>
+                  <p class="filters__valueMax">от 8</p>
+                </div>
+              </div>
+              <div class="filters__block">
+                <h4 class="filters__name">Высота выгрузки</h4>
+                <div class="filters__set">
+                  <div class="filters__slider">
+                    <div class="filters__track"></div>
+                  </div>
+                  <div class="filters__inputs">
+                    <input class="filter__inputMin filters__range" type="range" min="6" max="9" value="6" step="1" data-filter="Высота выгрузки" />
+                    <input class="filter__inputMax filters__range" type="range" min="6" max="9" value="9" step="1" data-filter="Высота выгрузки" />
+                  </div>
+                </div>
+                <div class="filters__values">
+                  <p class="filters__valueMin">от 6</p>
+                  <p class="filters__valueMax">от 9</p>
+                </div>
+              </div>
+              <div class="filters__block">
+                <h4 class="filters__name">Объем ковша</h4>
+                <div class="filters__set">
+                  <div class="filters__slider">
+                    <div class="filters__track"></div>
+                  </div>
+                  <div class="filters__inputs">
+                    <input class="filter__inputMin filters__range" type="range" min="0" max="3" value="0" step="1" data-filter="Объем ковша" />
+                    <input class="filter__inputMax filters__range" type="range" min="0" max="3" value="3" step="1" data-filter="Объем ковша" />
+                  </div>
+                </div>
+                <div class="filters__values">
+                  <p class="filters__valueMin">от 0</p>
+                  <p class="filters__valueMax">от 3</p>
+                </div>
+              </div>
+              <div class="filters__block">
+                <h4 class="filters__name">Максимальный вылет стрелы</h4>
+                <div class="filters__set">
+                  <div class="filters__slider">
+                    <div class="filters__track"></div>
+                  </div>
+                  <div class="filters__inputs">
+                    <input class="filter__inputMin filters__range" type="range" min="4" max="18" value="4" step="1" data-filter="Максимальный вылет стрелы" />
+                    <input class="filter__inputMax filters__range" type="range" min="4" max="18" value="18" step="1" data-filter="Максимальный вылет стрелы" />
+                  </div>
+                </div>
+                <div class="filters__values">
+                  <p class="filters__valueMin">от 4</p>
+                  <p class="filters__valueMax">от 18</p>
+                </div>
+              </div>
+              <div class="filters__block">
+                <h4 class="filters__name">Мощность двигателя</h4>
+                <div class="filters__set">
+                  <div class="filters__slider">
+                    <div class="filters__track"></div>
+                  </div>
+                  <div class="filters__inputs">
+                    <input class="filter__inputMin filters__range" type="range" min="90" max="265" value="90" step="1" data-filter="Мощность двигателя" />
+                    <input class="filter__inputMax filters__range" type="range" min="90" max="265" value="265" step="1" data-filter="Мощность двигателя" />
+                  </div>
+                </div>
+                <div class="filters__values">
+                  <p class="filters__valueMin">от 90</p>
+                  <p class="filters__valueMax">от 265</p>
+                </div>
+              </div>
+              <div class="filters__block">
+                <h4 class="filters__name">Высота подъема ковша</h4>
+                <div class="filters__set">
+                  <div class="filters__slider">
+                    <div class="filters__track"></div>
+                  </div>
+                  <div class="filters__inputs">
+                    <input class="filter__inputMin filters__range" type="range" min="8" max="12" value="8" step="1" data-filter="Высота подъема ковша" />
+                    <input class="filter__inputMax filters__range" type="range" min="8" max="12" value="12" step="1" data-filter="Высота подъема ковша" />
+                  </div>
+                </div>
+                <div class="filters__values">
+                  <p class="filters__valueMin">от 8</p>
+                  <p class="filters__valueMax">от 12</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
-			<div class="catalog__sort"><span class="catalog__sort-type" data-type="popularity">Сортировать по</span><img class="catalog__arrow"
-					src="<?php echo bloginfo( 'template_url' ); ?>/assets/images/catalog/arrow-down.svg" alt="">
-				<ul class="catalog__sort-list">
-					<li class="catalog__sort-item" data-type="popularity" data-text="По популярности">Популярности</li>
-					<li class="catalog__sort-item" data-type="fromMinToMax" data-text="По возрастанию">Возрастанию цены</li>
-					<li class="catalog__sort-item" data-type="fromMaxToMin" data-text="По убыванию">Убыванию цены</li>
-				</ul>
-			</div>
-		</div>
-		<div class="catalog__categories-wrapper">
-			<ul class="catalog__categories">
-				<li class="catalog__category active" data-type="all">Все</li>
-				<li class="catalog__category" data-type="excavator">Экскаваторы-погрузчики</li>
-				<li class="catalog__category" data-type="tipper">Бульдозеры</li>
-				<li class="catalog__category" data-type="dozer">Гусеничный экскаватор</li>
-				<li class="catalog__category" data-type="loader">Погрузчик</li>
-				<li class="catalog__category" data-type="fLoader">Фронтальный погрузчик</li>
-				<li class="catalog__category" data-type="wheelDigger">Колесный экскаватор</li>
-				<li class="catalog__category" data-type="flail">Тралы и низкорамные площадки</li>
-				<li class="catalog__category" data-type="truck">Грунтовой каток</li>
-				<li class="catalog__category" data-type="crane">Автокран</li>
-				<li class="catalog__category" data-type="grader">Автогрейдер</li>
-				<li class="catalog__category" data-type="telescopicLoader">Телескопический погрузчик</li>
-				<li class="catalog__category" data-type="mini">Мини-техника</li>
-				<li class="catalog__category" data-type="hydraulicHammer">Гидромолоты</li>
-				<li class="catalog__category" data-type="drillingEquipment">Ямобур (буровая техника)</li>
-			</ul>
-			<div class="clearfix"></div>
-		</div>
+        <!-- Get site url -->
+        <div class="page-info-ajax" style="display:none;">
+          <p class="ajaxurl">
+            <?php echo site_url() ?>/wp-admin/admin-ajax.php
+          </p>
+        </div>
 
-		<!-- Get site url -->
-		<div class="page-info-ajax" style="display:none;">
-			<p class="ajaxurl">
-				<?php echo site_url() ?>/wp-admin/admin-ajax.php
-			</p>
-		</div>
-
-		<div class="catalog__wrapper">
-			<?php
-			$query_posts = new WP_Query( [ 
-				'post_type' => 'technics',
-				'posts_per_page' => $args['posts_per_page'],
-				'meta_key' => 'catalog__popularity',
-				'orderby' => 'meta_value_num',
-				'order' => 'DESC',
-				'cat_tech' => 'all'
-			] );
-
-			if ( $query_posts->have_posts() ) :
-				while ( $query_posts->have_posts() ) :
-					$query_posts->the_post();
-					?>
-					<div class="catalog__item">
-						<a href="#" class="catalog__link"></a>
-
-						<div class="catalog__img">
-							<img src="<?php echo get_field( 'catalog__img' ); ?>" alt="<?php the_title(); ?>" />
-						</div>
-
-						<a href="#" class="catalog__button">Подробнее</a>
-
-						<div class="catalog__info">
-							<h4 class="catalog__header">
-								<?php the_title(); ?>
-							</h4>
-
-							<div class="catalog__options">
-								<div class="catalog__feature">
-									<p class="catalog__name">
-										<?php echo get_field( 'catalog__name1' ); ?>
-									</p>
-									<p class="catalog__value">
-										<?php echo get_field( 'catalog__value1' ); ?>
-									</p>
-								</div>
-
-								<div class="catalog__feature">
-									<p class="catalog__name">
-										<?php echo get_field( 'catalog__name2' ); ?>
-									</p>
-									<p class="catalog__value">
-										<?php echo get_field( 'catalog__value2' ); ?>
-									</p>
-								</div>
-
-								<div class="catalog__feature">
-									<p class="catalog__name">
-										<?php echo get_field( 'catalog__name3' ); ?>
-									</p>
-									<p class="catalog__value">
-										<?php echo get_field( 'catalog__value3' ); ?>
-									</p>
-								</div>
-							</div>
-
-							<p class="catalog__price">
-								<?php echo get_field( 'catalog__price' ); ?> BYN
-							</p>
-						</div>
-
-					</div>
-					<?php
-				endwhile;
-				wp_reset_postdata();
-				?>
-
-				<div class="page-info-ajax" style="display:none;">
-					<p class="max_pages">
-						<?php echo $query->max_num_pages; ?>
-					</p>
-				</div>
-
-				<?php
-			endif;
-			?>
-
-
-		</div>
-
-		<div class="catalog__nofound">
-			<p class="catalog__sorry">Нам жаль, но по вашему запросу ничего не нашлось</p>
-			<div class="catalog__recommendation">
-				<p>Скорректируйте ваш запрос или</p>
-				<p><a href="#">передите в каталог</a></p>
-			</div>
-		</div>
-		<button class="catalog__more btn__link btn__grey">Показать больше</button>
-	</div>
+        <div class="catalog__wrapper">
+          <div class="catalog__card card">
+            <div class="card__picture"> <img src="./images/catalog/1.jpg" alt="Аренда экскаватора JCB JS260 LC полуболотный" /></div>
+            <div class="card__info">
+              <h4 class="card__title">Аренда экскаватора JCB JS260 LC полуболотный</h4>
+              <div class="card__features">
+                <div class="card__feature"><span class="card__featureName">Объем фронтального ковша</span><span class="card__valueName">1,3 м3</span></div>
+                <div class="card__feature"><span class="card__featureName">Высота выгрузки</span><span class="card__valueName">2690 мм</span></div>
+                <div class="card__feature"><span class="card__featureName">Мощность двигателя</span><span class="card__valueName">100 л.с.</span></div>
+                <div class="card__feature"><span class="card__featureName">4я характеристика</span><span class="card__valueName">4 м</span></div>
+                <div class="card__feature"><span class="card__featureName">5я характеристика</span><span class="card__valueName">5 м</span></div>
+              </div>
+              <div class="card__prices">
+                <div class="card__price"><span class="card__priceName">цена за час</span><span class="card__priceValue">80 BYN</span></div>
+                <div class="card__price"><span class="card__priceName">цена за смену (8 ч.)</span><span class="card__priceValue">8650 BYN</span></div>
+              </div>
+              <div class="card__button btn__link btn__yellow">Арендовать</div>
+            </div>
+          </div>
+          <div class="catalog__card card">
+            <div class="card__picture"> <img src="./images/catalog/1.jpg" alt="Аренда экскаватора JCB JS260 LC полуболотный" /></div>
+            <div class="card__info">
+              <h4 class="card__title">Аренда экскаватора JCB JS260 LC полуболотный</h4>
+              <div class="card__features">
+                <div class="card__feature"><span class="card__featureName">Объем фронтального ковша</span><span class="card__valueName">1,3 м3</span></div>
+                <div class="card__feature"><span class="card__featureName">Высота выгрузки</span><span class="card__valueName">2690 мм</span></div>
+                <div class="card__feature"><span class="card__featureName">Мощность двигателя</span><span class="card__valueName">100 л.с.</span></div>
+                <div class="card__feature"><span class="card__featureName">4я характеристика</span><span class="card__valueName">4 м</span></div>
+                <div class="card__feature"><span class="card__featureName">5я характеристика</span><span class="card__valueName">5 м</span></div>
+              </div>
+              <div class="card__prices">
+                <div class="card__price"><span class="card__priceName">цена за час</span><span class="card__priceValue">80 BYN</span></div>
+                <div class="card__price"><span class="card__priceName">цена за смену (8 ч.)</span><span class="card__priceValue">8650 BYN</span></div>
+              </div>
+              <div class="card__button btn__link btn__yellow">Арендовать</div>
+            </div>
+          </div>
+          <div class="catalog__card card">
+            <div class="card__picture"> <img src="./images/catalog/1.jpg" alt="Аренда экскаватора JCB JS260 LC полуболотный" /></div>
+            <div class="card__info">
+              <h4 class="card__title">Аренда экскаватора JCB JS260 LC полуболотный</h4>
+              <div class="card__features">
+                <div class="card__feature"><span class="card__featureName">Объем фронтального ковша</span><span class="card__valueName">1,3 м3</span></div>
+                <div class="card__feature"><span class="card__featureName">Высота выгрузки</span><span class="card__valueName">2690 мм</span></div>
+                <div class="card__feature"><span class="card__featureName">Мощность двигателя</span><span class="card__valueName">100 л.с.</span></div>
+                <div class="card__feature"><span class="card__featureName">4я характеристика</span><span class="card__valueName">4 м</span></div>
+                <div class="card__feature"><span class="card__featureName">5я характеристика</span><span class="card__valueName">5 м</span></div>
+              </div>
+              <div class="card__prices">
+                <div class="card__price"><span class="card__priceName">цена за час</span><span class="card__priceValue">80 BYN</span></div>
+                <div class="card__price"><span class="card__priceName">цена за смену (8 ч.)</span><span class="card__priceValue">8650 BYN</span></div>
+              </div>
+              <div class="card__button btn__link btn__yellow">Арендовать</div>
+            </div>
+          </div>
+          <div class="catalog__card card">
+            <div class="card__picture"> <img src="./images/catalog/1.jpg" alt="Аренда экскаватора JCB JS260 LC полуболотный" /></div>
+            <div class="card__info">
+              <h4 class="card__title">Аренда экскаватора JCB JS260 LC полуболотный</h4>
+              <div class="card__features">
+                <div class="card__feature"><span class="card__featureName">Объем фронтального ковша</span><span class="card__valueName">1,3 м3</span></div>
+                <div class="card__feature"><span class="card__featureName">Высота выгрузки</span><span class="card__valueName">2690 мм</span></div>
+                <div class="card__feature"><span class="card__featureName">Мощность двигателя</span><span class="card__valueName">100 л.с.</span></div>
+                <div class="card__feature"><span class="card__featureName">4я характеристика</span><span class="card__valueName">4 м</span></div>
+                <div class="card__feature"><span class="card__featureName">5я характеристика</span><span class="card__valueName">5 м</span></div>
+              </div>
+              <div class="card__prices">
+                <div class="card__price"><span class="card__priceName">цена за час</span><span class="card__priceValue">80 BYN</span></div>
+                <div class="card__price"><span class="card__priceName">цена за смену (8 ч.)</span><span class="card__priceValue">8650 BYN</span></div>
+              </div>
+              <div class="card__button btn__link btn__yellow">Арендовать</div>
+            </div>
+          </div>
+          <div class="catalog__card card">
+            <div class="card__picture"> <img src="./images/catalog/1.jpg" alt="Аренда экскаватора JCB JS260 LC полуболотный" /></div>
+            <div class="card__info">
+              <h4 class="card__title">Аренда экскаватора JCB JS260 LC полуболотный</h4>
+              <div class="card__features">
+                <div class="card__feature"><span class="card__featureName">Объем фронтального ковша</span><span class="card__valueName">1,3 м3</span></div>
+                <div class="card__feature"><span class="card__featureName">Высота выгрузки</span><span class="card__valueName">2690 мм</span></div>
+                <div class="card__feature"><span class="card__featureName">Мощность двигателя</span><span class="card__valueName">100 л.с.</span></div>
+                <div class="card__feature"><span class="card__featureName">4я характеристика</span><span class="card__valueName">4 м</span></div>
+                <div class="card__feature"><span class="card__featureName">5я характеристика</span><span class="card__valueName">5 м</span></div>
+              </div>
+              <div class="card__prices">
+                <div class="card__price"><span class="card__priceName">цена за час</span><span class="card__priceValue">80 BYN</span></div>
+                <div class="card__price"><span class="card__priceName">цена за смену (8 ч.)</span><span class="card__priceValue">8650 BYN</span></div>
+              </div>
+              <div class="card__button btn__link btn__yellow">Арендовать</div>
+            </div>
+          </div>
+          <div class="catalog__card card">
+            <div class="card__picture"> <img src="./images/catalog/1.jpg" alt="Аренда экскаватора JCB JS260 LC полуболотный" /></div>
+            <div class="card__info">
+              <h4 class="card__title">Аренда экскаватора JCB JS260 LC полуболотный</h4>
+              <div class="card__features">
+                <div class="card__feature"><span class="card__featureName">Объем фронтального ковша</span><span class="card__valueName">1,3 м3</span></div>
+                <div class="card__feature"><span class="card__featureName">Высота выгрузки</span><span class="card__valueName">2690 мм</span></div>
+                <div class="card__feature"><span class="card__featureName">Мощность двигателя</span><span class="card__valueName">100 л.с.</span></div>
+                <div class="card__feature"><span class="card__featureName">4я характеристика</span><span class="card__valueName">4 м</span></div>
+                <div class="card__feature"><span class="card__featureName">5я характеристика</span><span class="card__valueName">5 м</span></div>
+              </div>
+              <div class="card__prices">
+                <div class="card__price"><span class="card__priceName">цена за час</span><span class="card__priceValue">80 BYN</span></div>
+                <div class="card__price"><span class="card__priceName">цена за смену (8 ч.)</span><span class="card__priceValue">8650 BYN</span></div>
+              </div>
+              <div class="card__button btn__link btn__yellow">Арендовать</div>
+            </div>
+          </div>
+          <div class="catalog__card card">
+            <div class="card__picture"> <img src="./images/catalog/1.jpg" alt="Аренда экскаватора JCB JS260 LC полуболотный" /></div>
+            <div class="card__info">
+              <h4 class="card__title">Аренда экскаватора JCB JS260 LC полуболотный</h4>
+              <div class="card__features">
+                <div class="card__feature"><span class="card__featureName">Объем фронтального ковша</span><span class="card__valueName">1,3 м3</span></div>
+                <div class="card__feature"><span class="card__featureName">Высота выгрузки</span><span class="card__valueName">2690 мм</span></div>
+                <div class="card__feature"><span class="card__featureName">Мощность двигателя</span><span class="card__valueName">100 л.с.</span></div>
+                <div class="card__feature"><span class="card__featureName">4я характеристика</span><span class="card__valueName">4 м</span></div>
+                <div class="card__feature"><span class="card__featureName">5я характеристика</span><span class="card__valueName">5 м</span></div>
+              </div>
+              <div class="card__prices">
+                <div class="card__price"><span class="card__priceName">цена за час</span><span class="card__priceValue">80 BYN</span></div>
+                <div class="card__price"><span class="card__priceName">цена за смену (8 ч.)</span><span class="card__priceValue">8650 BYN</span></div>
+              </div>
+              <div class="card__button btn__link btn__yellow">Арендовать</div>
+            </div>
+          </div>
+          <div class="catalog__card card">
+            <div class="card__picture"> <img src="./images/catalog/1.jpg" alt="Аренда экскаватора JCB JS260 LC полуболотный" /></div>
+            <div class="card__info">
+              <h4 class="card__title">Аренда экскаватора JCB JS260 LC полуболотный</h4>
+              <div class="card__features">
+                <div class="card__feature"><span class="card__featureName">Объем фронтального ковша</span><span class="card__valueName">1,3 м3</span></div>
+                <div class="card__feature"><span class="card__featureName">Высота выгрузки</span><span class="card__valueName">2690 мм</span></div>
+                <div class="card__feature"><span class="card__featureName">Мощность двигателя</span><span class="card__valueName">100 л.с.</span></div>
+                <div class="card__feature"><span class="card__featureName">4я характеристика</span><span class="card__valueName">4 м</span></div>
+                <div class="card__feature"><span class="card__featureName">5я характеристика</span><span class="card__valueName">5 м</span></div>
+              </div>
+              <div class="card__prices">
+                <div class="card__price"><span class="card__priceName">цена за час</span><span class="card__priceValue">80 BYN</span></div>
+                <div class="card__price"><span class="card__priceName">цена за смену (8 ч.)</span><span class="card__priceValue">8650 BYN</span></div>
+              </div>
+              <div class="card__button btn__link btn__yellow">Арендовать</div>
+            </div>
+          </div>
+          <div class="catalog__card card">
+            <div class="card__picture"> <img src="./images/catalog/1.jpg" alt="Аренда экскаватора JCB JS260 LC полуболотный" /></div>
+            <div class="card__info">
+              <h4 class="card__title">Аренда экскаватора JCB JS260 LC полуболотный</h4>
+              <div class="card__features">
+                <div class="card__feature"><span class="card__featureName">Объем фронтального ковша</span><span class="card__valueName">1,3 м3</span></div>
+                <div class="card__feature"><span class="card__featureName">Высота выгрузки</span><span class="card__valueName">2690 мм</span></div>
+                <div class="card__feature"><span class="card__featureName">Мощность двигателя</span><span class="card__valueName">100 л.с.</span></div>
+                <div class="card__feature"><span class="card__featureName">4я характеристика</span><span class="card__valueName">4 м</span></div>
+                <div class="card__feature"><span class="card__featureName">5я характеристика</span><span class="card__valueName">5 м</span></div>
+              </div>
+              <div class="card__prices">
+                <div class="card__price"><span class="card__priceName">цена за час</span><span class="card__priceValue">80 BYN</span></div>
+                <div class="card__price"><span class="card__priceName">цена за смену (8 ч.)</span><span class="card__priceValue">8650 BYN</span></div>
+              </div>
+              <div class="card__button btn__link btn__yellow">Арендовать</div>
+            </div>
+          </div>
+          <div class="catalog__card card">
+            <div class="card__picture"> <img src="./images/catalog/1.jpg" alt="Аренда экскаватора JCB JS260 LC полуболотный" /></div>
+            <div class="card__info">
+              <h4 class="card__title">Аренда экскаватора JCB JS260 LC полуболотный</h4>
+              <div class="card__features">
+                <div class="card__feature"><span class="card__featureName">Объем фронтального ковша</span><span class="card__valueName">1,3 м3</span></div>
+                <div class="card__feature"><span class="card__featureName">Высота выгрузки</span><span class="card__valueName">2690 мм</span></div>
+                <div class="card__feature"><span class="card__featureName">Мощность двигателя</span><span class="card__valueName">100 л.с.</span></div>
+                <div class="card__feature"><span class="card__featureName">4я характеристика</span><span class="card__valueName">4 м</span></div>
+                <div class="card__feature"><span class="card__featureName">5я характеристика</span><span class="card__valueName">5 м</span></div>
+              </div>
+              <div class="card__prices">
+                <div class="card__price"><span class="card__priceName">цена за час</span><span class="card__priceValue">80 BYN</span></div>
+                <div class="card__price"><span class="card__priceName">цена за смену (8 ч.)</span><span class="card__priceValue">8650 BYN</span></div>
+              </div>
+              <div class="card__button btn__link btn__yellow">Арендовать</div>
+            </div>
+          </div>
+          <div class="catalog__card card">
+            <div class="card__picture"> <img src="./images/catalog/1.jpg" alt="Аренда экскаватора JCB JS260 LC полуболотный" /></div>
+            <div class="card__info">
+              <h4 class="card__title">Аренда экскаватора JCB JS260 LC полуболотный</h4>
+              <div class="card__features">
+                <div class="card__feature"><span class="card__featureName">Объем фронтального ковша</span><span class="card__valueName">1,3 м3</span></div>
+                <div class="card__feature"><span class="card__featureName">Высота выгрузки</span><span class="card__valueName">2690 мм</span></div>
+                <div class="card__feature"><span class="card__featureName">Мощность двигателя</span><span class="card__valueName">100 л.с.</span></div>
+                <div class="card__feature"><span class="card__featureName">4я характеристика</span><span class="card__valueName">4 м</span></div>
+                <div class="card__feature"><span class="card__featureName">5я характеристика</span><span class="card__valueName">5 м</span></div>
+              </div>
+              <div class="card__prices">
+                <div class="card__price"><span class="card__priceName">цена за час</span><span class="card__priceValue">80 BYN</span></div>
+                <div class="card__price"><span class="card__priceName">цена за смену (8 ч.)</span><span class="card__priceValue">8650 BYN</span></div>
+              </div>
+              <div class="card__button btn__link btn__yellow">Арендовать</div>
+            </div>
+          </div>
+          <div class="catalog__card card">
+            <div class="card__picture"> <img src="./images/catalog/1.jpg" alt="Аренда экскаватора JCB JS260 LC полуболотный" /></div>
+            <div class="card__info">
+              <h4 class="card__title">Аренда экскаватора JCB JS260 LC полуболотный</h4>
+              <div class="card__features">
+                <div class="card__feature"><span class="card__featureName">Объем фронтального ковша</span><span class="card__valueName">1,3 м3</span></div>
+                <div class="card__feature"><span class="card__featureName">Высота выгрузки</span><span class="card__valueName">2690 мм</span></div>
+                <div class="card__feature"><span class="card__featureName">Мощность двигателя</span><span class="card__valueName">100 л.с.</span></div>
+                <div class="card__feature"><span class="card__featureName">4я характеристика</span><span class="card__valueName">4 м</span></div>
+                <div class="card__feature"><span class="card__featureName">5я характеристика</span><span class="card__valueName">5 м</span></div>
+              </div>
+              <div class="card__prices">
+                <div class="card__price"><span class="card__priceName">цена за час</span><span class="card__priceValue">80 BYN</span></div>
+                <div class="card__price"><span class="card__priceName">цена за смену (8 ч.)</span><span class="card__priceValue">8650 BYN</span></div>
+              </div>
+              <div class="card__button btn__link btn__yellow">Арендовать</div>
+            </div>
+          </div>
+        </div>
+        <div class="catalog__nofound">
+          <p class="catalog__sorry">Нам жаль, но по вашему запросу ничего не нашлось</p>
+          <div class="catalog__recommendation">
+            <p>Скорректируйте ваш запрос или</p>
+            <p><a href="#">передите в каталог</a></p>
+          </div>
+        </div>
+        <button class="catalog__more btn__link btn__grey">Показать больше</button>
+      </div>
+    </div>
+  </div>
 </section>
