@@ -10,107 +10,16 @@
 ?>
 
 <section class="catalog">
+
   <div class="container">
     <h2 class="catalog__title block__title">Каталог техники</h2>
     <div class="catalog__container">
       <div class="catalog__categories categories">
-        <div class="categories__group">
-          <div class="categories__title"><span>Землеройная техника</span><span class="categories__arrow">
-              <svg width="9" height="6" viewBox="0 0 9 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M1 1L4.5 5L8 1" stroke="#1F1E1D" stroke-linecap="round" stroke-linejoin="round"></path>
-              </svg></span></div>
-          <ul class="categories__list">
-            <li class="categories__item">
-              <button class="categories__btn">Бульдозеры</button>
-            </li>
-            <li class="categories__item">
-              <button class="categories__btn">Буры</button>
-            </li>
-            <li class="categories__item">
-              <button class="categories__btn">Мини техника</button>
-            </li>
-            <li class="categories__item">
-              <button class="categories__btn">Колесные экскаваторы</button>
-            </li>
-            <li class="categories__item">
-              <button class="categories__btn">Аренда гусеничного экскаватора</button>
-            </li>
-            <li class="categories__item">
-              <button class="categories__btn">Аренда гидромолота</button>
-            </li>
-          </ul>
-        </div>
-        <div class="categories__group">
-          <div class="categories__title"><span>Грузоподъемная техника</span><span class="categories__arrow">
-              <svg width="9" height="6" viewBox="0 0 9 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M1 1L4.5 5L8 1" stroke="#1F1E1D" stroke-linecap="round" stroke-linejoin="round"></path>
-              </svg></span></div>
-          <ul class="categories__list">
-            <li class="categories__item">
-              <button class="categories__btn">Бульдозеры</button>
-            </li>
-            <li class="categories__item">
-              <button class="categories__btn">Буры</button>
-            </li>
-            <li class="categories__item">
-              <button class="categories__btn">Мини техника</button>
-            </li>
-            <li class="categories__item">
-              <button class="categories__btn">Колесные экскаваторы</button>
-            </li>
-            <li class="categories__item">
-              <button class="categories__btn">Аренда гусеничного экскаватора</button>
-            </li>
-            <li class="categories__item">
-              <button class="categories__btn">Аренда гидромолота</button>
-            </li>
-          </ul>
-        </div>
-        <div class="categories__group">
-          <div class="categories__title"><span>Грузовой транспорт</span><span class="categories__arrow">
-              <svg width="9" height="6" viewBox="0 0 9 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M1 1L4.5 5L8 1" stroke="#1F1E1D" stroke-linecap="round" stroke-linejoin="round"></path>
-              </svg></span></div>
-          <ul class="categories__list">
-            <li class="categories__item">
-              <button class="categories__btn">Бульдозеры</button>
-            </li>
-            <li class="categories__item">
-              <button class="categories__btn">Буры</button>
-            </li>
-            <li class="categories__item">
-              <button class="categories__btn">Мини техника</button>
-            </li>
-          </ul>
-        </div>
-        <div class="categories__group">
-          <div class="categories__title"><span>Дорожная техника</span><span class="categories__arrow">
-              <svg width="9" height="6" viewBox="0 0 9 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M1 1L4.5 5L8 1" stroke="#1F1E1D" stroke-linecap="round" stroke-linejoin="round"></path>
-              </svg></span></div>
-          <ul class="categories__list">
-            <li class="categories__item">
-              <button class="categories__btn">Бульдозеры</button>
-            </li>
-            <li class="categories__item">
-              <button class="categories__btn">Буры</button>
-            </li>
-          </ul>
-        </div>
-        <div class="categories__group">
-          <div class="categories__title"><span>Погрузочная техника</span><span class="categories__arrow">
-              <svg width="9" height="6" viewBox="0 0 9 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M1 1L4.5 5L8 1" stroke="#1F1E1D" stroke-linecap="round" stroke-linejoin="round"></path>
-              </svg></span></div>
-          <ul class="categories__list">
-            <li class="categories__item">
-              <button class="categories__btn">Бульдозеры</button>
-            </li>
-            <li class="categories__item">
-              <button class="categories__btn">Буры</button>
-            </li>
-          </ul>
-        </div>
+
+        <?php
+        get_template_part('template-parts/categories', null, null);
+        ?>
+
       </div>
       <div class="catalog__content">
         <div class="catalog__filters filters">
@@ -129,103 +38,11 @@
             <div class="filters__list-wrapper">
               <div class="filters__heading">Разделы</div>
               <div class="filters__categories">
-                <div class="categories__group">
-                  <div class="categories__title"><span>Землеройная техника</span><span class="categories__arrow">
-                      <svg width="9" height="6" viewBox="0 0 9 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M1 1L4.5 5L8 1" stroke="#1F1E1D" stroke-linecap="round" stroke-linejoin="round"></path>
-                      </svg></span></div>
-                  <ul class="categories__list">
-                    <li class="categories__item">
-                      <button class="categories__btn">Бульдозеры</button>
-                    </li>
-                    <li class="categories__item">
-                      <button class="categories__btn">Буры</button>
-                    </li>
-                    <li class="categories__item">
-                      <button class="categories__btn">Мини техника</button>
-                    </li>
-                    <li class="categories__item">
-                      <button class="categories__btn">Колесные экскаваторы</button>
-                    </li>
-                    <li class="categories__item">
-                      <button class="categories__btn">Аренда гусеничного экскаватора</button>
-                    </li>
-                    <li class="categories__item">
-                      <button class="categories__btn">Аренда гидромолота</button>
-                    </li>
-                  </ul>
-                </div>
-                <div class="categories__group">
-                  <div class="categories__title"><span>Грузоподъемная техника</span><span class="categories__arrow">
-                      <svg width="9" height="6" viewBox="0 0 9 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M1 1L4.5 5L8 1" stroke="#1F1E1D" stroke-linecap="round" stroke-linejoin="round"></path>
-                      </svg></span></div>
-                  <ul class="categories__list">
-                    <li class="categories__item">
-                      <button class="categories__btn">Бульдозеры</button>
-                    </li>
-                    <li class="categories__item">
-                      <button class="categories__btn">Буры</button>
-                    </li>
-                    <li class="categories__item">
-                      <button class="categories__btn">Мини техника</button>
-                    </li>
-                    <li class="categories__item">
-                      <button class="categories__btn">Колесные экскаваторы</button>
-                    </li>
-                    <li class="categories__item">
-                      <button class="categories__btn">Аренда гусеничного экскаватора</button>
-                    </li>
-                    <li class="categories__item">
-                      <button class="categories__btn">Аренда гидромолота</button>
-                    </li>
-                  </ul>
-                </div>
-                <div class="categories__group">
-                  <div class="categories__title"><span>Грузовой транспорт</span><span class="categories__arrow">
-                      <svg width="9" height="6" viewBox="0 0 9 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M1 1L4.5 5L8 1" stroke="#1F1E1D" stroke-linecap="round" stroke-linejoin="round"></path>
-                      </svg></span></div>
-                  <ul class="categories__list">
-                    <li class="categories__item">
-                      <button class="categories__btn">Бульдозеры</button>
-                    </li>
-                    <li class="categories__item">
-                      <button class="categories__btn">Буры</button>
-                    </li>
-                    <li class="categories__item">
-                      <button class="categories__btn">Мини техника</button>
-                    </li>
-                  </ul>
-                </div>
-                <div class="categories__group">
-                  <div class="categories__title"><span>Дорожная техника</span><span class="categories__arrow">
-                      <svg width="9" height="6" viewBox="0 0 9 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M1 1L4.5 5L8 1" stroke="#1F1E1D" stroke-linecap="round" stroke-linejoin="round"></path>
-                      </svg></span></div>
-                  <ul class="categories__list">
-                    <li class="categories__item">
-                      <button class="categories__btn">Бульдозеры</button>
-                    </li>
-                    <li class="categories__item">
-                      <button class="categories__btn">Буры</button>
-                    </li>
-                  </ul>
-                </div>
-                <div class="categories__group">
-                  <div class="categories__title"><span>Погрузочная техника</span><span class="categories__arrow">
-                      <svg width="9" height="6" viewBox="0 0 9 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M1 1L4.5 5L8 1" stroke="#1F1E1D" stroke-linecap="round" stroke-linejoin="round"></path>
-                      </svg></span></div>
-                  <ul class="categories__list">
-                    <li class="categories__item">
-                      <button class="categories__btn">Бульдозеры</button>
-                    </li>
-                    <li class="categories__item">
-                      <button class="categories__btn">Буры</button>
-                    </li>
-                  </ul>
-                </div>
+
+                <?php
+                get_template_part('template-parts/categories', null, null);
+                ?>
+
               </div>
               <div class="filters__heading">Фильтры</div>
               <div class="filters__wrapper"></div>
