@@ -71,7 +71,7 @@ function bauarenda_scripts() {
 		true
 	);
 	wp_enqueue_script( 'bauarenda-main-scripts', get_template_directory_uri() . '/assets/js/main.min.js', array(), null, true );
-	wp_enqueue_script( 'bauarenda-catalog', get_template_directory_uri() . '/assets/js/catalog.js', array(), null, true );
+	// wp_enqueue_script( 'bauarenda-catalog', get_template_directory_uri() . '/assets/js/catalog.js', array(), null, true );
 }
 
 
