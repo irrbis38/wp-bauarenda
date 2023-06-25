@@ -207,7 +207,7 @@ get_header();
 
 
 	<?php
-	$params = [ 'posts_per_page' => 16 ];
+	$params = [ 'posts_per_page' => 12 ];
 	get_template_part( 'template-parts/catalog', null, $params );
 	?>
 
