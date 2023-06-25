@@ -43,55 +43,26 @@
 
 <body>
 	<header class="header" id="top">
-		<div class="header__logo header__logo--small"><img class="logo__image" src="<?php echo bloginfo( 'template_url' ); ?>/assets/images/header/logo-small.svg" alt="logo"><a
-				href="#"></a></div>
+		<div class="header__logo header__logo--small"><a href="<?php echo get_home_url(); ?>"><img class="logo__image"
+					src="<?php echo bloginfo( 'template_url' ); ?>/assets/images/header/logo-small.svg" alt="logo"></a></div>
+
 		<div class="header__wrapper">
 			<div class="header__top">
 				<div class="container">
 					<nav class="header__menu">
-						<ul>
-							<li class="header__elem"><a class="header__link" href="#">Аренда техники</a></li>
-							<li class="header__elem dropdown_show"><a class="header__link header__list" href="#">О компании
-									<svg width="9" height="6" viewBox="0 0 9 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-										<path d="M1 1L4.5 5L8 1" stroke="#1F1E1D" stroke-linecap="round" stroke-linejoin="round"></path>
-									</svg></a>
-								<ul class="dropdown_menu dropdown__list">
-									<li><a class="header__link" href="#">Наши клиенты</a></li>
-									<li><a class="header__link" href="#">Наши партнеры</a></li>
-									<li><a class="header__link" href="#">Статьи</a></li>
-									<li><a class="header__link" href="#">Отзывы</a></li>
-									<li><a class="header__link" href="#">Гарантии</a></li>
-									<li><a class="header__link" href="#">Лицензии и сертификаты</a></li>
-									<li><a class="header__link" href="#">Вакансии</a></li>
-									<li><a class="header__link" href="#">Вопрос/ответ</a></li>
-								</ul>
-							</li>
-							<li class="header__elem"><a class="header__link" href="#">Цены</a></li>
-							<li class="header__elem dropdown_show"><a class="header__link header__list" href="#">Услуги
-									<svg width="9" height="6" viewBox="0 0 9 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-										<path d="M1 1L4.5 5L8 1" stroke="#1F1E1D" stroke-linecap="round" stroke-linejoin="round"></path>
-									</svg></a>
-								<ul class="dropdown_menu dropdown__list">
-									<li><a class="header__link" href="#">Земляные работы</a></li>
-									<li><a class="header__link" href="#">Бурение отверстий</a></li>
-									<li><a class="header__link" href="#">Вывоз и утилизация грунта</a></li>
-									<li><a class="header__link" href="#">Вывоз строительного мусора</a></li>
-									<li><a class="header__link" href="#">Доставка негабаритных грузов</a></li>
-									<li><a class="header__link" href="#">Продажа строительного песка</a></li>
-									<li><a class="header__link" href="#">Уборка и вывоз снега</a></li>
-								</ul>
-							</li>
-							<li class="header__elem"><a class="header__link" href="#">Новости</a></li>
-							<li class="header__elem"><a class="header__link" href="#">Акции</a></li>
-							<li class="header__elem dropdown_show"><a class="header__link header__list" href="#">Контакты
-									<svg width="9" height="6" viewBox="0 0 9 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-										<path d="M1 1L4.5 5L8 1" stroke="#1F1E1D" stroke-linecap="round" stroke-linejoin="round"></path>
-									</svg></a>
-								<ul class="dropdown_menu dropdown__list">
-									<li><a class="header__link" href="#">Горячая линия</a></li>
-								</ul>
-							</li>
-						</ul>
+
+						<?php
+						wp_nav_menu( [ 
+							'menu' => 'HeaderMenu',
+							'container' => false,
+							'menu_class' => 'header__menu-list',
+							'echo' => true,
+							'fallback_cd' => 'wp_page_menu',
+							'items_wrap' => '<ul class="header__menu-list">%3$s</ul>',
+							'depth' => 0
+						] );
+						?>
+
 					</nav>
 					<div class="header__search"><img class="header__icon" src="<?php echo bloginfo( 'template_url' ); ?>/assets/images/header/search.svg" alt="icon">
 						<p>поиск</p>
@@ -100,8 +71,9 @@
 			</div>
 			<div class="header__bottom">
 				<div class="container">
-					<div class="header__logo header__logo--big"><img class="logo__image" src="<?php echo bloginfo( 'template_url' ); ?>/assets/images/header/logo.svg" alt="logo"><a
-							href="#"></a></div>
+					<div class="header__logo header__logo--big"><a href="<?php echo get_home_url(); ?>"><img class="logo__image"
+								src="<?php echo bloginfo( 'template_url' ); ?>/assets/images/header/logo.svg" alt="logo"></a></div>
+
 					<nav class="header__contacts">
 						<div class="header__item"><a class="header__contact" href="mailto:info@bauarenda.by">info@bauarenda.by</a></div>
 						<div class="header__item"><a class="header__contact" href="tel:+375297477171">+375 29 747-71-71</a></div>

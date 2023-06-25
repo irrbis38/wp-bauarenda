@@ -13,7 +13,8 @@
 
 <footer class="footer">
 	<div class="container">
-		<div class="footer__logo"><img src="<?php echo bloginfo( 'template_url' ); ?>/assets/images/footer/footer-logo.svg" alt="logo"><a href="#"></a></div>
+		<div class="footer__logo"><img src="<?php echo bloginfo( 'template_url' ); ?>/assets/images/footer/footer-logo.svg" alt="logo"><a href="<?php echo get_home_url(); ?>"></a>
+		</div>
 		<div class="footer__wrapper">
 			<div class="footer__info">
 				<p class="footer__text">г. Минск , 220090, ул. широкая, д. 3, пом. 148-2</p>
