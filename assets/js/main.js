@@ -1,7 +1,10 @@
 document.addEventListener("DOMContentLoaded", function () {
   initHeader();
   initHeaderSearch();
-  initToggleFeedbackField();
+  const fixedShowField = document.querySelector(".fixed__showField");
+  if (fixedShowField) {
+    initToggleFeedbackField(fixedShowField);
+  }
   initAnimationShowByScroll();
 
   // init index page
@@ -54,6 +57,183 @@ document.addEventListener("DOMContentLoaded", function () {
     initToTopButton(first);
     initReviewsFullScreen();
     initForms();
+  }
+
+  // init contacts page
+  const contacts_page = document.querySelector(".contacts__page");
+  if (contacts_page) {
+    const first = document.querySelector(".first");
+    initToTopButton(first);
+    initReviewsSlider();
+    initReviewsFullScreen();
+    initForms();
+    initMap();
+  }
+
+  // init company page
+  const company_page = document.querySelector(".company__page");
+  if (company_page) {
+    const first = document.querySelector(".first");
+    initToTopButton(first);
+    initReviewsSlider();
+    initReviewsFullScreen();
+    initForms();
+  }
+
+  // init hotline page
+  const hotline_page = document.querySelector(".hotline__page");
+  if (hotline_page) {
+    const first = document.querySelector(".first");
+    initToTopButton(first);
+    initReviewsSlider();
+    initReviewsFullScreen();
+    initForms();
+  }
+
+  // init jobs page
+  const jobs_page = document.querySelector(".jobs__page");
+  if (jobs_page) {
+    const first = document.querySelector(".first");
+    initToTopButton(first);
+    initReviewsSlider();
+    initReviewsFullScreen();
+    initForms();
+  }
+
+  // init licenses page
+  const licenses_page = document.querySelector(".licenses__page");
+  if (licenses_page) {
+    const first = document.querySelector(".first");
+    initToTopButton(first);
+    initReviewsSlider();
+    initReviewsFullScreen();
+    initForms();
+  }
+
+  // init promotioins page
+  const promotions_page = document.querySelector(".promotions__page");
+  if (promotions_page) {
+    const first = document.querySelector(".first");
+    initToTopButton(first);
+    initReviewsSlider();
+    initReviewsFullScreen();
+    initForms();
+  }
+
+  // init warranties page
+  const warranties_page = document.querySelector(".warranties__page");
+  if (warranties_page) {
+    const first = document.querySelector(".first");
+    initToTopButton(first);
+    initReviewsSlider();
+    initReviewsFullScreen();
+    initForms();
+  }
+
+  // init catalog page
+  const catalog_page = document.querySelector(".catalog__page");
+  if (catalog_page) {
+    const first = document.querySelector(".first");
+    initToTopButton(first);
+    initReviewsSlider();
+    initReviewsFullScreen();
+    initForms();
+    const showFixedFeedbackButton = document.querySelector(".rental__button");
+    if (showFixedFeedbackButton) {
+      initToggleFeedbackField(showFixedFeedbackButton);
+    }
+  }
+
+  // init catalog-item page
+  const catalog_item_page = document.querySelector(".catalog-item-page");
+  if (catalog_item_page) {
+    const view = document.querySelector(".view");
+    initToTopButton(view);
+    initReviewsSlider();
+    initReviewsFullScreen();
+    initForms();
+    initViewSlider();
+    initDetailsTabs();
+    initBookFormValidation();
+    initYoutubeVideo();
+    const showFixedFeedbackButton = document.querySelector(".rental__button");
+    if (showFixedFeedbackButton) {
+      initToggleFeedbackField(showFixedFeedbackButton);
+    }
+  }
+
+  // init prices page
+  const prices_page = document.querySelector(".prices__page");
+  if (prices_page) {
+    const first = document.querySelector(".first");
+    initToTopButton(first);
+    initReviewsSlider();
+    initReviewsFullScreen();
+    initForms();
+  }
+
+  // init news page
+  const news_page = document.querySelector(".news__page");
+  if (news_page) {
+    const news_title = document.querySelector(".news__title");
+    initToTopButton(news_title);
+    initReviewsSlider();
+    initReviewsFullScreen();
+    initForms();
+  }
+
+  // init news-item page
+  const news_item_page = document.querySelector(".news-item");
+  if (news_item_page) {
+    const news_item_title = document.querySelector(".news-item__title");
+    initToTopButton(news_item_title);
+    initForms();
+    initSmothScroll();
+  }
+
+  // init rental page
+  const rental_page = document.querySelector(".rental__page");
+  if (rental_page) {
+    const first = document.querySelector(".first");
+    initToTopButton(first);
+    initReviewsSlider();
+    initReviewsFullScreen();
+    initForms();
+    initQAaccordion();
+    initYoutubeVideo();
+    const showFixedFeedbackButton = document.querySelector(".rental__button");
+    if (showFixedFeedbackButton) {
+      initToggleFeedbackField(showFixedFeedbackButton);
+    }
+  }
+
+  // init services-list page
+  const services_list_page = document.querySelector(".services-list__page");
+  if (services_list_page) {
+    const first = document.querySelector(".first");
+    initToTopButton(first);
+    initReviewsSlider();
+    initReviewsFullScreen();
+    initForms();
+    const showFixedFeedbackButton = document.querySelector(".rental__button");
+    if (showFixedFeedbackButton) {
+      initToggleFeedbackField(showFixedFeedbackButton);
+    }
+  }
+
+  // init services-item page
+  const services_item_page = document.querySelector(".services-item__page");
+  if (services_item_page) {
+    const first = document.querySelector(".first");
+    initToTopButton(first);
+    initReviewsSlider();
+    initReviewsFullScreen();
+    initForms();
+    initQAaccordion();
+    const showFixedFeedbackButton = document.querySelector(".rental__button");
+    if (showFixedFeedbackButton) {
+      initToggleFeedbackField(showFixedFeedbackButton);
+    }
   }
 });
 
@@ -282,26 +462,29 @@ function initToTopButton(first_block) {
 }
 
 // INIT TOGGLE FEEDBACK FIELD
-function initToggleFeedbackField() {
+function initToggleFeedbackField(showFixedButton) {
   // show / hide feedback field
 
   const body = document.querySelector("body");
-  const fixedShowField = document.querySelector(".fixed__showField");
   const fixedFeedback = document.querySelector(".fixed__feedback");
   const fixedBG = document.querySelector(".fixed__bg");
   const fixedClose = document.querySelector(".fixed__close");
 
-  fixedShowField.addEventListener("click", () => {
+  showFixedButton.addEventListener("click", () => {
     body.classList.add("lock");
     fixedFeedback.classList.add("active");
     fixedBG.classList.add("active");
   });
 
-  fixedClose.addEventListener("click", () => {
+  [fixedClose, fixedBG].forEach((el) =>
+    el.addEventListener("click", closeFeedbackHandler)
+  );
+
+  function closeFeedbackHandler() {
     body.classList.remove("lock");
     fixedFeedback.classList.remove("active");
     fixedBG.classList.remove("active");
-  });
+  }
 }
 
 // INIT ANIMATION BY SCROLL
@@ -503,6 +686,213 @@ function initQAaccordion() {
         item.classList.remove("active");
         item.children[1].style.maxHeight = null;
       });
+    });
+  }
+}
+
+// INIT MAP ON CONTACTS PAGE
+
+function initMap() {
+  function init() {
+    let center = [53.94869157061366, 27.61157049999995];
+    let map = new ymaps.Map("contactsMap", {
+      center: center,
+      zoom: 16,
+    });
+
+    let mark = new ymaps.Placemark(
+      center,
+      {},
+      {
+        iconLayout: "default#image",
+        iconImageHref: "./../images/contacts/mark.svg",
+        iconImageSize: [24, 32],
+        iconImageOffset: [-5, -30],
+      }
+    );
+
+    map.controls.remove("geolocationControl"); // удаляем геолокацию
+    map.controls.remove("searchControl"); // удаляем поиск
+    map.controls.remove("trafficControl"); // удаляем контроль трафика
+    map.controls.remove("typeSelector"); // удаляем тип
+    map.controls.remove("fullscreenControl"); // удаляем кнопку перехода в полноэкранный режим
+    map.controls.remove("zoomControl"); // удаляем контрол зуммирования
+    map.controls.remove("rulerControl"); // удаляем контрол правил
+    //map.behaviors.disable(["scrollZoom"]); // отключаем скролл карты (опционально)
+
+    map.geoObjects.add(mark);
+  }
+  ymaps.ready(init);
+}
+
+// lazyLoading video from youtube
+
+function initYoutubeVideo() {
+  // get all video elements on the page
+  const videos = document.querySelectorAll(".video__block");
+
+  // generate video url
+  const generateUrl = (id) => {
+    const query = "?rel=0&showinfo=0&autoplay=1";
+    return "https://www.youtube.com/embed/" + id + query;
+  };
+
+  // create iframe element
+  const createIframe = (id) => {
+    const iframe = document.createElement("iframe");
+    iframe.classList.add("video__iframe");
+    iframe.setAttribute("src", generateUrl(id));
+    iframe.setAttribute("title", "YouTube video player");
+    iframe.setAttribute("frameborder", "0");
+    iframe.setAttribute("allowfullscreen", "");
+    iframe.setAttribute(
+      "allow",
+      "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope;"
+    );
+
+    return iframe;
+  };
+
+  // handling each video element
+  videos.forEach((el) => {
+    const videoHref = el.dataset.video;
+    const deletedLength = "https://youtu.be/".length;
+
+    const videoId = videoHref.substring(deletedLength, videoHref.length);
+
+    const img = el.querySelector("img");
+
+    const youtubeImgSrc =
+      "https://i.ytimg.com/vi/" + videoId + "/maxresdefault.jpg";
+
+    img.setAttribute("src", youtubeImgSrc);
+
+    el.addEventListener("click", (e) => {
+      e.preventDefault();
+
+      let iframe = createIframe(videoId);
+      el.querySelector("img").remove();
+      el.querySelector("button").remove();
+      el.append(iframe);
+    });
+  });
+}
+
+// ========= CATALOG-ITEM PAGE
+
+function initViewSlider() {
+  // view slider
+  const viewSlider = new Swiper(".view__slider", {
+    loop: false,
+    spaceBetween: 10,
+    grabCursor: true,
+    slidesPerView: 2,
+    freeMode: true,
+    watchSlidesProgress: true,
+    breakpoints: {
+      480: {
+        spaceBetween: 10,
+        slidesPerView: 3,
+      },
+      576: {
+        spaceBetween: 10,
+        slidesPerView: 4,
+      },
+      767: {
+        slidesPerView: 4,
+        spaceBetween: 30,
+      },
+      1024: {
+        slidesPerView: 3,
+      },
+      1280: {
+        slidesPerView: 4,
+      },
+    },
+  });
+
+  const viewSliderFullsize = new Swiper(".view__fullsize", {
+    effect: "fade",
+    navigation: {
+      nextEl: ".view__next",
+      prevEl: ".view__prev",
+    },
+    thumbs: {
+      swiper: viewSlider,
+    },
+  });
+}
+
+function initDetailsTabs() {
+  // get all buttons and tabs
+  const buttons = Array.from(document.querySelectorAll(".description__button"));
+  const tabs_items = Array.from(
+    document.querySelectorAll(".description__item")
+  );
+
+  // add listener to every button
+  buttons.forEach((btn) =>
+    btn.addEventListener("click", () => {
+      const isActiveButton = btn.classList.contains("active");
+
+      if (!isActiveButton) {
+        // get index of selected button
+        const indexButton = buttons.indexOf(btn);
+
+        requestAnimationFrame(() => {
+          // reset all the button and tabs
+          buttons.forEach((btn) => btn.classList.remove("active"));
+          tabs_items.forEach((item) => item.classList.remove("show"));
+
+          // set classes to selected button and tab
+          buttons[indexButton].classList.add("active");
+          tabs_items[indexButton].classList.add("show");
+        });
+      }
+    })
+  );
+}
+
+function initBookFormValidation() {
+  const form = document.querySelector(".book__form");
+  const input_container = document.querySelector(".book__item");
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    if (!form.elements.phone.validity.valid) {
+      input_container.classList.add("error");
+    } else {
+      const formData = new FormData(form);
+      form.reset();
+    }
+  });
+
+  input_container.children[1].addEventListener("input", () => {
+    input_container.classList.remove("error");
+  });
+}
+
+function initSmothScroll() {
+  const news_links = Array.from(
+    document.querySelectorAll(".news-item__list li a")
+  );
+  const news_blocks = Array.from(
+    document.querySelectorAll(".news-item__block")
+  );
+
+  news_links.forEach((link) => link.addEventListener("click", handleNewsLinks));
+
+  function handleNewsLinks(e) {
+    e.preventDefault();
+    const index = news_links.indexOf(e.target);
+    const scrollTarget = news_blocks[index];
+
+    const elementPosition = scrollTarget.getBoundingClientRect().top;
+
+    window.scrollBy({
+      top: elementPosition,
+      behavior: "smooth",
     });
   }
 }
