@@ -61,6 +61,8 @@ function show_svg_in_media_library($response)
 
 
 
+
+
 // add styles and scripts
 function bauarenda_scripts()
 {
@@ -80,7 +82,6 @@ function bauarenda_scripts()
 
 
 // ====== MENUES ======
-// add_theme_support( 'menus' );
 register_nav_menu('header-menu', 'Меню в header');
 
 //
@@ -303,6 +304,5 @@ function ba_regiser_type_partners()
     'supports' => ['title']
   ]);
 }
-
 
 ?>

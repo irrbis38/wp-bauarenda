@@ -96,7 +96,8 @@ get_header();
 
 
         <div class="reviews__fullscreen">
-          <div class="reviews__fullscreen-wrapper"><img class="reviews__fullscreen-img" src="./images/reviews/rev1.jpg" alt="скриншот отзыва">
+          <div class="reviews__fullscreen-wrapper"><img class="reviews__fullscreen-img" src="<?php echo bloginfo('template_url'); ?>/assets/images/reviews/rev1.png"
+              alt="скриншот отзыва">
             <div class="reviews__fullscreen-closer">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M1.5 1.57617L22.5 22.5762M22.5 1.57617L1.5 22.5762" stroke="white" stroke-width="2"></path>
