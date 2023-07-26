@@ -105,7 +105,7 @@ get_header();
 
 
   <?php
-  get_template_part('template-parts/fixed');
+  get_template_part('template-parts/fixed-part');
   ?>
 
 
@@ -253,42 +253,11 @@ get_header();
       </div>
     </div>
   </section>
-  <section class="advantage">
-    <div class="container">
-      <div class="advantage__container">
-        <div class="advantage__main">
-          <h2 class="advantage__title block__title">Аренда спецтехники у нас - выгодно и надежно</h2>
-          <p class="advantage__text">Аренда спецтехники – профильное направление работы для компании «БауАренда». Качество наших услуг аренды спецтехники успели справедливо оценить
-            сотни компаний и частных заказчиков. Благодаря этому, за время работы мы обзавелись широким кругом постоянных клиентов и деловых партнеров. А это лучший маркер и
-            объективное свидетельство успеха компании, правильно выбранного подхода к ведению бизнеса.</p><a class="advantage__link btn__link btn__yellow" href="#">Подробнее</a>
-        </div>
-        <div class="advantage__wrapper">
-          <div class="advantage__item">
-            <div class="advantage__icon"><img src="<?php echo bloginfo('template_url'); ?>/assets/images/advantage/1.svg" alt="преимущество"></div>
-            <h4 class="advantage__header">100% компетентный персонал</h4>
-            <p class="advantage__description">Все наши машинисты обладают профильным образованием и имеют весомый опыт работы</p>
-          </div>
-          <div class="advantage__border"></div>
-          <div class="advantage__item">
-            <div class="advantage__icon"><img src="<?php echo bloginfo('template_url'); ?>/assets/images/advantage/2.svg" alt="преимущество"></div>
-            <h4 class="advantage__header">24/7 мы работаем всегда!</h4>
-            <p class="advantage__description">Мы понимаем, что оперативность в строительстве очень важны.</p>
-          </div>
-          <div class="advantage__item">
-            <div class="advantage__icon"><img src="<?php echo bloginfo('template_url'); ?>/assets/images/advantage/3.svg" alt="преимущество"></div>
-            <h4 class="advantage__header">40% экономии</h4>
-            <p class="advantage__description">Наши клиенты получают очень выгодные скидки.</p>
-          </div>
-          <div class="advantage__border"></div>
-          <div class="advantage__item">
-            <div class="advantage__icon"><img src="<?php echo bloginfo('template_url'); ?>/assets/images/advantage/4.svg" alt="преимущество"></div>
-            <h4 class="advantage__header">37 наименований спецтехники</h4>
-            <p class="advantage__description">Наш парк состоит из 37 различных единиц спецтехники.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+
+  <?php
+  get_template_part('template-parts/advantage-part');
+  ?>
+
   <section class="news">
 
     <div class="container">
@@ -345,6 +314,7 @@ get_header();
       <a class="news__more btn__link btn__grey" href="#">Посмотреть все</a>
     </div>
   </section>
+
   <section class="brands">
     <div class="container">
       <h2 class="brands__title block__title">В нашем распоряжении машины лучших мировых производителей</h2>
@@ -367,6 +337,7 @@ get_header();
       </div>
     </div>
   </section>
+
   <section class="need">
     <div class="container">
       <h2 class="need__title block__title">В каких случаях необходима аренда специализированных машин</h2>
@@ -397,7 +368,7 @@ get_header();
   </section>
 
   <?php
-  get_template_part('template-parts/causes');
+  get_template_part('template-parts/causes-part');
   ?>
 
   <section class="reasons">
@@ -497,26 +468,14 @@ get_header();
 
   <?php
   $reviews_params = ['posts_per_page' => 6];
-  get_template_part('template-parts/reviews', null, $reviews_params);
+  get_template_part('template-parts/reviews-part', null, $reviews_params);
   ?>
 
 
-  <section class="feedback second__feedback">
-    <div class="container">
-      <h2 class="feedback__title block__title">Обратная связь</h2>
-      <p class="feedback__subtitle">Нет времени выбирать? Заполните заявку и сотрудник вас проконсультирует.</p>
-      <form class="feedback__form" action="#" novalidate>
-        <p class="error__message">Заполните все обязательные для заполнения поля. Номер телефона должен быть не короче 9 символов.</p>
-        <div class="feedback__item">
-          <input class="feedback__name" type="text" placeholder="Имя*" name="name" required>
-        </div>
-        <div class="feedback__item">
-          <input class="feedback__phone" type="text" placeholder="Телефон*" name="phone" minlength="9" required>
-        </div>
-        <input class="feedback__submit btn__link btn__yellow" type="submit" value="Отправить" name="submit">
-      </form>
-    </div>
-  </section>
+  <?php
+  get_template_part('template-parts/feedback-wide');
+  ?>
+
 </main>
 
 <?php

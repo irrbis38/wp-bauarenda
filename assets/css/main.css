@@ -2197,8 +2197,7 @@ body {
   margin-right: 23px
 }
 .technics {
-  padding-top: 150px;
-  padding-bottom: 150px
+  margin: 150px 0
 }
 .technics__title {
   margin-bottom: 30px
@@ -2271,8 +2270,8 @@ body {
   color: #acacac
 }
 .about {
-  padding-top: 150px;
-  padding-bottom: 150px;
+  margin: 150px 0;
+  padding: 150px 0;
   background: #f5f7fb url(../images/about/about-bg.png) top right no-repeat
 }
 .about__title {
@@ -2478,8 +2477,7 @@ body {
   transition: color .2s ease-in-out
 }
 .services {
-  padding-top: 150px;
-  padding-bottom: 150px
+  margin: 150px 0
 }
 .services__title {
   margin-bottom: 40px
@@ -2664,7 +2662,7 @@ body {
   }
 }
 .news {
-  padding-bottom: 150px
+  margin: 150px 0
 }
 .news__title {
   margin-bottom: 40px
@@ -2785,8 +2783,8 @@ body {
   align-items: center
 }
 .brands {
-  padding-top: 150px;
-  padding-bottom: 150px;
+  margin: 150px 0;
+  padding: 150px 0;
   background-color: #f5f7fb
 }
 .brands__title {
@@ -2862,8 +2860,7 @@ body {
   width: 90.8%
 }
 .need {
-  padding-top: 150px;
-  padding-bottom: 150px
+  margin: 150px 0
 }
 .need__title {
   width: 82%;
@@ -2903,6 +2900,7 @@ body {
   margin-right: 10px
 }
 .causes {
+  margin: 150px 0;
   padding-top: 150px;
   padding-bottom: 150px;
   background: url(../images/causes/causes-bg.jpg)
@@ -2950,8 +2948,7 @@ body {
   margin-bottom: 8px
 }
 .reasons {
-  padding-top: 150px;
-  padding-bottom: 134px
+  margin: 150px 0 134px
 }
 .reasons__title {
   width: 61%;
@@ -3019,7 +3016,7 @@ body {
   color: #4d5051
 }
 .machines {
-  padding-bottom: 150px
+  margin: 150px 0
 }
 .machines__title {
   width: 58%;
@@ -3123,7 +3120,7 @@ body {
   margin-bottom: 0
 }
 .reviews {
-  padding-bottom: 120px
+  margin: 150px 0
 }
 .reviews__title {
   margin-bottom: 30px
@@ -3457,7 +3454,7 @@ form {
     min-height: 211px
   }
   .technics {
-    padding: 100px 0
+    margin: 100px 0
   }
   .technics__wrapper {
     grid-template-columns: repeat(3,308px);
@@ -3477,8 +3474,8 @@ form {
     margin-bottom: 19px
   }
   .about {
-    padding-top: 100px;
-    padding-bottom: 100px
+    margin: 100px 0;
+    padding: 100px 0
   }
   .about__title {
     margin-bottom: 30px
@@ -3529,8 +3526,7 @@ form {
     font-size: 12px
   }
   .services {
-    padding-top: 100px;
-    padding-bottom: 100px
+    margin: 100px 0
   }
   .services__title {
     margin-bottom: 30px
@@ -3578,14 +3574,14 @@ form {
     margin-bottom: 35px
   }
   .news {
-    padding-bottom: 100px
+    margin: 100px 0
   }
   .news__wrapper {
     margin-bottom: 40px
   }
   .brands {
-    padding-top: 100px;
-    padding-bottom: 100px
+    margin: 100px 0;
+    padding: 100px 0
   }
   .brands__title {
     margin-bottom: 30px
@@ -3595,8 +3591,7 @@ form {
     grid-template-rows: repeat(4,74px)
   }
   .need {
-    padding-top: 100px;
-    padding-bottom: 100px
+    margin: 100px 0
   }
   .need__title {
     margin-bottom: 30px
@@ -3628,6 +3623,7 @@ form {
 }
 @media (max-width:1279px) {
   .causes {
+    margin: 100px 0;
     padding-top: 100px;
     padding-bottom: 100px
   }
@@ -3666,8 +3662,7 @@ form {
 }
 @media (max-width:1279px) {
   .reasons {
-    padding-top: 100px;
-    padding-bottom: 100px
+    margin: 100px 0
   }
 }
 @media (max-width:1279px) {
@@ -3698,7 +3693,7 @@ form {
 }
 @media (max-width:1279px) {
   .machines {
-    padding-bottom: 100px
+    margin: 100px 0
   }
 }
 @media (max-width:1279px) {
@@ -3741,7 +3736,7 @@ form {
 }
 @media (max-width:1279px) {
   .reviews {
-    padding-bottom: 100px
+    margin: 100px 0
   }
 }
 @media (max-width:1279px) {
@@ -3806,7 +3801,7 @@ form {
     margin: 0 auto
   }
   .technics {
-    padding-top: 470px
+    margin-top: 470px
   }
   .technics__wrapper {
     grid-template-columns: repeat(2,349px);
@@ -4145,8 +4140,8 @@ form {
     font-size: 12px
   }
   .technics {
-    padding-top: 532px;
-    padding-bottom: 60px
+    margin-top: 532px;
+    margin-bottom: 60px
   }
   .technics__title {
     margin-bottom: 20px
@@ -4187,8 +4182,8 @@ form {
     font-size: 11px
   }
   .about {
-    padding-top: 60px;
-    padding-bottom: 60px
+    margin: 60px 0;
+    padding: 60px 0
   }
   .about__title {
     margin-bottom: 20px
@@ -4268,7 +4263,7 @@ form {
     margin-bottom: 10px
   }
   .services {
-    padding: 60px 0
+    margin: 60px 0
   }
   .services__title {
     margin-bottom: 20px
@@ -4331,7 +4326,7 @@ form {
     margin: 0 auto
   }
   .news {
-    padding-bottom: 60px
+    margin: 60px 0
   }
   .news__title {
     margin-bottom: 20px
@@ -4357,6 +4352,7 @@ form {
     font-size: 12px
   }
   .brands {
+    margin: 60px 0;
     padding: 60px 0
   }
   .brands__title {
@@ -4367,7 +4363,7 @@ form {
     gap: 10px
   }
   .need {
-    padding: 60px 0
+    margin: 60px 0
   }
   .need__title {
     width: 100%;
@@ -4399,6 +4395,7 @@ form {
 }
 @media (max-width:767px) {
   .causes {
+    margin: 60px 0;
     padding: 60px 0
   }
 }
@@ -4427,7 +4424,7 @@ form {
 }
 @media (max-width:767px) {
   .reasons {
-    padding: 60px 0
+    margin: 60px 0
   }
 }
 @media (max-width:767px) {
@@ -4467,7 +4464,7 @@ form {
 }
 @media (max-width:767px) {
   .machines {
-    padding-bottom: 60px
+    margin: 60px 0
   }
 }
 @media (max-width:767px) {
@@ -4512,7 +4509,7 @@ form {
 }
 @media (max-width:767px) {
   .reviews {
-    padding-bottom: 60px
+    margin: 60px 0
   }
 }
 @media (max-width:767px) {
@@ -4591,7 +4588,7 @@ form {
     margin-bottom: 51px
   }
   .technics {
-    padding-top: 622px
+    margin-top: 622px
   }
   .about__second {
     height: auto;
@@ -5696,16 +5693,16 @@ form {
   color: #4d5051
 }
 .catalog {
-  padding: 150px 0
+  margin: 150px 0
 }
 @media (max-width:1279px) {
   .catalog {
-    padding: 100px 0
+    margin: 100px 0
   }
 }
 @media (max-width:767px) {
   .catalog {
-    padding: 60px 0
+    margin: 60px 0
   }
 }
 .catalog__title {
@@ -6175,7 +6172,9 @@ form {
 }
 .card__picture {
   width: 100%;
-  height: 135px
+  height: 135px;
+  border-radius: 10px 10px 0 0;
+  overflow: hidden
 }
 .card__picture img {
   width: 100%;
