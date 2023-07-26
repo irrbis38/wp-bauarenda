@@ -201,7 +201,8 @@ get_header();
   ?>
 
   <?php
-  get_template_part('template-parts/qa-part');
+  $qa_params = ['title' => 'Часто задаваемые вопросы'];
+  get_template_part('template-parts/qa-part', null, $qa_params);
   ?>
 
   <?php

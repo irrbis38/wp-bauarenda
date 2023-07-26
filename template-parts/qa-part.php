@@ -11,10 +11,12 @@
 
 <section class="qa">
   <div class="container">
-    <h2 class="qa__title block__title">Часто задаваемые вопросы</h2>
+    <h2 class="qa__title block__title">
+      <?php echo $args['title'] ?>
+    </h2>
     <div class="qa__wrapper">
       <div class="qa__item">
-        <h3 class="qa__heading">Какую технику доступна для аренды в фирме «БауАренда»?
+        <h3 class="qa__heading">Какая техника доступна для аренды в фирме «БауАренда»?
           <svg width="9" height="6" viewBox="0 0 9 6" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M1 1L4.5 5L8 1" stroke="#1F1E1D" stroke-linecap="round" stroke-linejoin="round"></path>
           </svg>
