@@ -8,6 +8,7 @@ get_header();
 
 
 <main class="main">
+
   <section class="first our-clients__page">
     <div class="container">
       <div class="first__wrapper">
@@ -32,6 +33,7 @@ get_header();
       </div>
     </div>
   </section>
+
   <section class="partners">
     <div class="container">
       <h2 class="partners__title block__title">Чуть больше о партнёрах компании</h2>
@@ -88,12 +90,10 @@ get_header();
   get_template_part('template-parts/popular-part');
   ?>
 
-
   <?php
   $reviews_params = ['posts_per_page' => 6];
   get_template_part('template-parts/reviews-part', null, $reviews_params);
   ?>
-
 
   <?php
   get_template_part('template-parts/feedback-wide');
@@ -107,6 +107,5 @@ get_header();
 
 
 <?php
-
 get_footer();
 ?>
