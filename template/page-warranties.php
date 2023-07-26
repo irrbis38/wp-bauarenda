@@ -12,7 +12,8 @@ get_header();
     <div class="container">
       <div class="first__wrapper">
         <div class="first__info">
-          <div class="first__breadcrumps breadcrumps"><a href="./index.html">Главная</a><a href="./company.html">О компании</a><span>Гарантии</span></div>
+          <div class="first__breadcrumps breadcrumps"><a href="<?php echo get_home_url(); ?>">Главная</a><a href="<?php echo get_page_link(198) ?>">О
+              компании</a><span>Гарантии</span></div>
           <h1 class="first__title intro__title">Гарантии</h1>
           <p class="first__text intro__text">
             Популярность услуг аренды строительной и другой спецтехники постоянно растет. Такой сервис востребован как среди частных, так и среди корпоративных клиентов, ведь

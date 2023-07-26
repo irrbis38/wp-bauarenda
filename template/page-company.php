@@ -12,7 +12,7 @@ get_header();
     <div class="container">
       <div class="first__wrapper">
         <div class="first__info">
-          <div class="first__breadcrumps breadcrumps"><a href="./index.html">Главная</a><span>О компании</span></div>
+          <div class="first__breadcrumps breadcrumps"><a href="<?php echo get_home_url(); ?>">Главная</a><span>О компании</span></div>
           <h1 class="first__title intro__title">О компании</h1>
           <p class="first__text intro__text">
             Компания «БауАренда» уже много лет работает на рынке. Мы не просто оказываем услуги по аренде техники, мы задаем тон всем остальным, своей деятельностью наглядно

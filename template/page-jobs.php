@@ -11,7 +11,8 @@ get_header();
     <div class="container">
       <div class="first__wrapper">
         <div class="first__info">
-          <div class="first__breadcrumps breadcrumps"><a href="./index.html">Главная</a><a href="./company.html">О компании</a><span>Вакансии</span></div>
+          <div class="first__breadcrumps breadcrumps"><a href="<?php echo get_home_url(); ?>">Главная</a><a href="<?php echo get_page_link(198) ?>">О
+              компании</a><span>Вакансии</span></div>
           <h1 class="first__title intro__title">Вакансии</h1>
           <p class="first__text intro__text">
             Фирма «БауАренда» давно и хорошо известна на белорусском рынке аренды спецтехники как сильный игрок. Достичь такого успеха в столь специфической бизнес-нише нам помогла

@@ -12,7 +12,8 @@ get_header();
     <div class="container">
       <div class="first__wrapper">
         <div class="first__info">
-          <div class="first__breadcrumps"><a class="first__prev" href="./index.html">Главная</a><span class="first__current">Отзывы</span></div>
+          <div class="first__breadcrumps breadcrumps"><a href="<?php echo get_home_url(); ?>">Главная</a><a href="<?php echo get_page_link(198) ?>">О
+              компании</a><span>Отзывы</span></div>
           <h1 class="first__title intro__title">Отзывы</h1>
           <p class="first__text intro__text">
             На белорусском рынке аренды спецтехники работает пока не так много фирм, но все равно выбрать среди них компанию, которая точно не подведет, не просто. Неправильный
