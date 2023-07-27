@@ -6899,7 +6899,7 @@ li .page-numbers.next::after {
   .popular__wrapper {
     grid-template-columns: repeat(3,1fr)
   }
-  .popular__wrapper .card:last-child {
+  .popular__wrapper .card:nth-child(4) {
     display: none
   }
 }
