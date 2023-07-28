@@ -256,7 +256,7 @@ get_header();
   ?>
 
   <?php
-  get_template_part('template-parts/advantage-hotline-price-part');
+  get_template_part('template-parts/advantage-services-price-part');
   ?>
 
   <section class="infoBlock prices__infoBlock">
