@@ -1,6 +1,7 @@
 <?php
 /*
   Template Name: NewsItem Template
+  Template Post Type: news
 */
 
 get_header();
