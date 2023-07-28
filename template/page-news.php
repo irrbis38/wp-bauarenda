@@ -10,7 +10,7 @@ get_header();
 <main class="main">
   <section class="news news__page">
     <div class="container">
-      <div class="first__breadcrumps breadcrumps"><a href="./index.html">Главная</a><span>Новости</span></div>
+      <div class="first__breadcrumps breadcrumps"><a href="<?php echo get_home_url(); ?>">Главная</a><span>Новости</span></div>
       <h2 class="news__title block__title">Новости</h2>
       <div class="news__wrapper">
         <div class="news__item element-animation">
