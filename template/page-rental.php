@@ -37,7 +37,7 @@ get_header();
       <h2 class="park__title block__title">Наш парк техники</h2>
       <div class="park__container">
         <div class="park__block">
-          <h3 class="park__category"><a href="./catalog.html">Землеройная техника</a></h3>
+          <h3 class="park__category"><a href="<?php echo get_page_link(267) ?>">Землеройная техника</a></h3>
           <div class="park__wrapper">
             <div class="park__item">
               <div class="park__image"> <img src="<?php echo bloginfo('template_url'); ?>/assets/images/rental/rental1-1.png" alt="Бульдозеры" /></div>
@@ -78,7 +78,7 @@ get_header();
           </div>
         </div>
         <div class="park__block">
-          <h3 class="park__category"><a href="./catalog.html">Грузоподъемная техника</a></h3>
+          <h3 class="park__category"><a href="<?php echo get_page_link(269) ?>">Грузоподъемная техника</a></h3>
           <div class="park__wrapper">
             <div class="park__item">
               <div class="park__image"> <img src="<?php echo bloginfo('template_url'); ?>/assets/images/rental/rental2-1.png" alt="Аренда автокрана" /></div>
@@ -89,7 +89,7 @@ get_header();
           </div>
         </div>
         <div class="park__block">
-          <h3 class="park__category"><a href="./catalog.html">Грузовой транспорт</a></h3>
+          <h3 class="park__category"><a href="<?php echo get_page_link(270) ?>">Грузовой транспорт</a></h3>
           <div class="park__wrapper">
             <div class="park__item">
               <div class="park__image"> <img src="<?php echo bloginfo('template_url'); ?>/assets/images/rental/rental3-1.png" alt="Самосвалы" /></div>
@@ -106,7 +106,7 @@ get_header();
           </div>
         </div>
         <div class="park__block">
-          <h3 class="park__category"><a href="./catalog.html">Дорожная техника</a></h3>
+          <h3 class="park__category"><a href="<?php echo get_page_link(271) ?>">Дорожная техника</a></h3>
           <div class="park__wrapper">
             <div class="park__item">
               <div class="park__image"> <img src="<?php echo bloginfo('template_url'); ?>/assets/images/rental/rental4-1.png" alt="Аренда катка" /></div>
@@ -123,7 +123,7 @@ get_header();
           </div>
         </div>
         <div class="park__block">
-          <h3 class="park__category"><a href="./catalog.html">Погрузочная техника</a></h3>
+          <h3 class="park__category"><a href="<?php echo get_page_link(272) ?>">Погрузочная техника</a></h3>
           <div class="park__wrapper">
             <div class="park__item">
               <div class="park__image"> <img src="<?php echo bloginfo('template_url'); ?>/assets/images/rental/rental5-1.png" alt="Аренда телескопического погрузчика" /></div>

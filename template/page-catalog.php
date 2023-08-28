@@ -13,7 +13,7 @@ get_header();
       <div class="first__wrapper">
         <div class="first__info">
           <div class="first__breadcrumps"><a class="first__prev" href="<?php echo get_home_url(); ?>">Главная</a><a class="first__prev"
-              href="<?php echo get_page_link(187) ?>">Аренда</a><span class="first__current">Аренда колесных экскаваторов</span></div>
+              href="<?php echo get_page_link(245) ?>">Аренда</a><span class="first__current">Аренда колесных экскаваторов</span></div>
           <h1 class="first__title intro__title">Аренда колесных экскаваторов</h1>
           <div class="first__text intro__text">
             <p>Аренда колесного экскаватора — востребованный тип услуг в сфере строительства и инженерной области. Машины стабильны, мощны и достаточно универсальны, чтобы

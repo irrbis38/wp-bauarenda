@@ -13,7 +13,7 @@ get_header();
     <div class="container">
       <div class="first__wrapper">
         <div class="first__info">
-          <div class="first__breadcrumps"><a class="first__prev" href="<?php echo get_home_url(); ?>">Главная</a><a class="first__prev" href="<?php echo get_page_link(198) ?>">О
+          <div class="first__breadcrumps"><a class="first__prev" href="<?php echo get_home_url(); ?>">Главная</a><a class="first__prev" href="<?php echo get_page_link(209) ?>">О
               компании</a><span class="first__current">Вопрос/ответ</span></div>
           <h1 class="first__title intro__title">Вопрос/ответ</h1>
           <p class="first__text intro__text">«Насколько быстро вы доставляете строительную технику?»<br>Наша компания отлично понимает, что такое оперативность при строительстве –

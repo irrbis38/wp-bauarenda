@@ -13,7 +13,7 @@ get_header();
       <div class="first__wrapper">
         <div class="first__info">
           <div class="first__breadcrumps breadcrumps"><a class="first__prev" href="<?php echo get_home_url(); ?>">Главная</a><a class="first__prev"
-              href="<?php echo get_page_link(214) ?>">Контакты</a><span>Горячая линия</span></div>
+              href="<?php echo get_page_link(242) ?>">Контакты</a><span>Горячая линия</span></div>
           <h1 class="first__title intro__title">Горячая линия</h1>
           <p class="first__text intro__text">
             Мы создали горячую линию, чтобы Вам было легче сотрудничать с нашей компанией. Теперь узнать о решении проблем, аренде техники и сотрудничестве стало гораздо проще –

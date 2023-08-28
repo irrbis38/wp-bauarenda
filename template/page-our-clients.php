@@ -13,7 +13,7 @@ get_header();
     <div class="container">
       <div class="first__wrapper">
         <div class="first__info">
-          <div class="first__breadcrumps"><a class="first__prev" href="<?php echo get_home_url(); ?>">Главная</a><a class="first__prev" href="<?php echo get_page_link(198) ?>">О
+          <div class="first__breadcrumps"><a class="first__prev" href="<?php echo get_home_url(); ?>">Главная</a><a class="first__prev" href="<?php echo get_page_link(209) ?>">О
               компании</a><span class="first__current">Наши
               клиенты</span></div>
           <h1 class="first__title intro__title">Наши клиенты</h1>
